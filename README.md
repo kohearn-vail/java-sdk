@@ -52,11 +52,12 @@ You can generate a Cobertura coverage report by running `gradle cobertura`. The 
 
 ## Documentation
 
-The [FreeClimb documentation](https://www.persephony.com/docs) has guides on [getting started](https://www.persephony.com/docs/getting-started/) with Persephony, as well as the [API reference](https://www.persephony.com/docs/api/), [PerCL reference](https://www.persephony.com/docs/percl/), and several useful [tutorials.](https://www.persephony.com/docs/tutorials/).
+The [FreeClimb documentation ](https://docs.freeclimb.com/docs) has guides on [getting started](https://docs.freeclimb.com/docs/getting-started-with-freeclimb
+) with FreeClimb, as well as the [API reference](https://docs.freeclimb.com/reference/using-the-api) and [PerCL reference](https://docs.freeclimb.com/reference/percl-overview)
 
 ## Getting Help
 
-If you are experiencing difficulties, contact our support team at [support@persephony.com](mailto:support@persephony.com).
+If you are experiencing difficulties, contact our support team at [support@freeclimb.com](mailto:support@freeclimb.com).
 
 ## Dependencies
 
