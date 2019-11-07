@@ -2,15 +2,15 @@
 
 The FreeClimb Java SDK will allow you to easily use the FreeClimb API in a Java application.
 
-[![Release](https://jitpack.io/v/PersephonyAPI/java-sdk.svg)](https://jitpack.io/#PersephonyAPI/java-sdk)
-[![Build Status](https://travis-ci.com/PersephonyAPI/java-sdk.svg?branch=master)](https://travis-ci.com/PersephonyAPI/java-sdk)
-[![Maintainability](https://api.codeclimate.com/v1/badges/5db37830ae23321e9150/maintainability)](https://codeclimate.com/github/PersephonyAPI/java-sdk/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/5db37830ae23321e9150/test_coverage)](https://codeclimate.com/github/PersephonyAPI/java-sdk/test_coverage)
-[Docs](https://jitpack.io/com/github/persephonyapi/java-sdk/latest/javadoc/)
+[![Release](https://jitpack.io/v/FreeClimbAPI/java-sdk.svg)](https://jitpack.io/#FreeClimbAPI/java-sdk)
+[![Build Status](https://travis-ci.com/FreeClimbAPI/java-sdk.svg?branch=master)](https://travis-ci.com/FreeClimbAPI/java-sdk)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5db37830ae23321e9150/maintainability)](https://codeclimate.com/github/FreeClimbAPI/java-sdk/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5db37830ae23321e9150/test_coverage)](https://codeclimate.com/github/FreeClimbAPI/java-sdk/test_coverage)
+[Docs](https://jitpack.io/com/github/FreeClimbapi/java-sdk/latest/javadoc/)
 
 ### SDK Installation
 
-To include the SDK in your build, follow the instructions on [Jitpack](https://jitpack.io/#PersephonyAPI/java-sdk)
+To include the SDK in your build, follow the instructions on [Jitpack](https://jitpack.io/#FreeClimbAPI/java-sdk)
 
 ## Testing your Installation
 
@@ -52,8 +52,7 @@ You can generate a Cobertura coverage report by running `gradle cobertura`. The 
 
 ## Documentation
 
-The [FreeClimb documentation ](https://docs.freeclimb.com/docs) has guides on [getting started](https://docs.freeclimb.com/docs/getting-started-with-freeclimb
-) with FreeClimb, as well as the [API reference](https://docs.freeclimb.com/reference/using-the-api) and [PerCL reference](https://docs.freeclimb.com/reference/percl-overview)
+The [FreeClimb documentation ](https://docs.freeclimb.com/docs) has guides on [getting started](https://docs.freeclimb.com/docs/getting-started-with-freeclimb) with FreeClimb, as well as the [API reference](https://docs.freeclimb.com/reference/using-the-api) and [PerCL reference](https://docs.freeclimb.com/reference/percl-overview)
 
 ## Getting Help
 
