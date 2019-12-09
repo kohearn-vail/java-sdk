@@ -29,7 +29,7 @@ import com.vailsys.freeclimb.KnownSizeInputStream;
  */
 public class APIRequester {
 	/** The URL of the FreeClimb API */
-	protected static String FREECLIMB_URL = "https://www.persephony.com/apiserver";
+	protected static String FREECLIMB_URL = "https://www.freeclimb.com/apiserver";
 
 	/**
 	 * Type object representing the {@code HashMap<String,String>} used by
