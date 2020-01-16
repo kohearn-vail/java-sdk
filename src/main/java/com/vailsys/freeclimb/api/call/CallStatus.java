@@ -64,12 +64,5 @@ public enum CallStatus {
 	 * as {@code "noAnswer"}.
 	 */
 	@SerializedName("noAnswer")
-	NO_ANSWER,
-	/**
-	 * This value represents that the call is in progress and has joined a
-	 * conference. This is marked in the JSON representation of a Call instance that
-	 * comes from the API as {@code "bridged"}.
-	 */
-	@SerializedName("bridged")
-	BRIDGED
+	NO_ANSWER
 }
