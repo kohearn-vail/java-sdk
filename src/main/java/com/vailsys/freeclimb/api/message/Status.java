@@ -14,5 +14,6 @@ public enum Status {
     QUEUED, @SerializedName("rejected")
     REJECTED, @SerializedName("received")
     RECEIVED, @SerializedName("sending")
-    SENDING
+    SENDING, @SerializedName("undelivered")
+    UNDELIVERED
 }
