@@ -20,5 +20,6 @@ public enum FinishOnKey {
 	NINE, @SerializedName("0")
 	ZERO, @SerializedName("#")
 	POUND, @SerializedName("*")
-	STAR
+	STAR, @SerializedName("")
+  NONE
 }
