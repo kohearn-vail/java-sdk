@@ -24,7 +24,7 @@ public class APIRequesterTest {
 	@Given("^an accountId of (AC[0-9A-Fa-f]{40}) and an authToken of ([0-9A-Fa-f]{40}) to make a default APIRequester$")
 	public void makeADefaultAPIRequester(String accountId, String authToken) throws Throwable {
 		this.req = new APIRequester(accountId, authToken);
-		assertThat(APIRequester.FREECLIMB_URL, is("https://www.persephony.com/apiserver"));
+		assertThat(APIRequester.FREECLIMB_URL, is("https://www.freeclimb.com/apiserver"));
 	}
 
 	@Given("^an accountId of (AC[0-9A-Fa-f]{40}) and an authToken of ([0-9A-Fa-f]{40}) to make a test APIRequester$")
