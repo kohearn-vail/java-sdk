@@ -5,12 +5,11 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'maven'
 
-// group = 'com.github.FreeClimbAPI'
-// group = 'com.github.FreeClimbAPI'
+group = 'com.github.FreeClimbAPI'
 
 sourceCompatibility = 1.7 // java 7
 targetCompatibility = 1.7
-version = '1.0.0'
+version = '2.0.0'
 
 repositories {
 	mavenCentral()
