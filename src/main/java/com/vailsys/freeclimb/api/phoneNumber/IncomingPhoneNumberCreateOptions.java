@@ -1,12 +1,12 @@
 package com.vailsys.freeclimb.api.phoneNumber;
 
-import com.vailsys.freeclimb.api.CommonFields;
+
 
 /**
  * This class represents the optional fields which can be passed in when
  * purchasing an IncomingPhoneNumber.
  */
-public class IncomingPhoneNumberCreateOptions extends CommonFields {
+public class IncomingPhoneNumberCreateOptions {
     /**
      * The E.164 formatted phone number of the available number to purchase.
      *

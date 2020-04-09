@@ -1,12 +1,12 @@
 package com.vailsys.freeclimb.api.application;
 
-import com.vailsys.freeclimb.api.CommonFields;
+
 
 /**
  * The class represents the optional fields which can be passed in when updating
  * an Application.
  */
-public class ApplicationUpdateOptions extends CommonFields {
+public class ApplicationUpdateOptions {
     /**
      * The alias of the application.
      */

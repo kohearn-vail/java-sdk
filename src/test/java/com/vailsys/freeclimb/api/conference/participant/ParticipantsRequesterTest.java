@@ -98,11 +98,10 @@ public class ParticipantsRequesterTest {
                 String participantId = "CAef219e4e9152a4b31888620cf391adcae5b6f18c";
                 ParticipantUpdateOptions options = new ParticipantUpdateOptions();
                 options.setListen(false);
-                options.setRequestId("RQ1111111111111111111111111111111111111111");
 
                 Helper.getMockServer().when(request().withMethod("POST")
                                 .withPath(this.partR.getPath() + "/" + participantId)
-                                .withBody("{\"listen\":false,\"requestId\":\"RQ1111111111111111111111111111111111111111\"}"))
+                                .withBody("{\"listen\":false}"))
                                 .respond(response().withStatusCode(200)
                                                 .withBody(ParticipantsRequesterTest.anUpdatedParticipant));
 

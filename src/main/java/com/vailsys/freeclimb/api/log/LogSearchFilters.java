@@ -1,12 +1,10 @@
 package com.vailsys.freeclimb.api.log;
 
-import com.vailsys.freeclimb.api.CommonFields;
-
 /**
  * Represents the possible fields one can set as filters when searching for
  * logs.
  */
-public class LogSearchFilters extends CommonFields {
+public class LogSearchFilters {
     /**
      * The FreeClimb query language query. This represents a Lucene-like query that
      * will filter the list of logs.

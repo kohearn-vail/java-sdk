@@ -1,12 +1,12 @@
 package com.vailsys.freeclimb.api.queue;
 
-import com.vailsys.freeclimb.api.CommonFields;
+
 
 /**
  * The class represents the optional fields which can be passed in when creating
  * a Queue.
  */
-public class QueueCreateOptions extends CommonFields {
+public class QueueCreateOptions {
     /**
      * The alias of the queue.
      */

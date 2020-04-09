@@ -1,6 +1,6 @@
 package com.vailsys.freeclimb.api.conference;
 
-import com.vailsys.freeclimb.api.CommonFields;
+
 
 /**
  * The class represents the optional fields which can be passed in when creating
@@ -8,7 +8,7 @@ import com.vailsys.freeclimb.api.CommonFields;
  *
  * @see com.vailsys.freeclimb.api.conference.ConferencesRequester#create(ConferenceCreateOptions)
  */
-public class ConferenceCreateOptions extends CommonFields {
+public class ConferenceCreateOptions {
 	/**
 	 * The alias allows the conference to be referred to by a user defined name
 	 * rather than a FreeClimb generated Id.

@@ -1,6 +1,6 @@
 package com.vailsys.freeclimb.api.message;
 
-import com.vailsys.freeclimb.api.CommonFields;
+
 
 /**
  * The class represents the common optional fields which can be passed in when
@@ -8,7 +8,7 @@ import com.vailsys.freeclimb.api.CommonFields;
  *
  * @see com.vailsys.freeclimb.api.message.MessagesRequester#create(String,String,String,MessageOptions)
  */
-public class MessageOptions extends CommonFields {
+public class MessageOptions {
 	/**
 	 * The url that will be requested when the status of an outbound message
 	 * changes.
