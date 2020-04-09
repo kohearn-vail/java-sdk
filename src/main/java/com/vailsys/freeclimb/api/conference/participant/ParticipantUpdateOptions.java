@@ -1,12 +1,12 @@
 package com.vailsys.freeclimb.api.conference.participant;
 
-import com.vailsys.freeclimb.api.CommonFields;
+
 
 /**
  * The class representing the optional fields which can be passed in when
  * updating a Participant.
  */
-public class ParticipantUpdateOptions extends CommonFields {
+public class ParticipantUpdateOptions {
     /**
      * The talk setting of the participant.
      */

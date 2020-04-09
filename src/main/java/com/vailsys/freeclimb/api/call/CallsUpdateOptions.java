@@ -1,6 +1,6 @@
 package com.vailsys.freeclimb.api.call;
 
-import com.vailsys.freeclimb.api.CommonFields;
+
 
 /**
  * The class represents the optional fields which can be passed in when updating
@@ -9,7 +9,7 @@ import com.vailsys.freeclimb.api.CommonFields;
  * @see com.vailsys.freeclimb.api.call.CallsRequester#update(String,
  *      CallsUpdateOptions)
  */
-public class CallsUpdateOptions extends CommonFields {
+public class CallsUpdateOptions {
 	private CallStatus status;
 
 	public CallStatus getStatus() {

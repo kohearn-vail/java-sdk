@@ -1,6 +1,6 @@
 package com.vailsys.freeclimb.api.call;
 
-import com.vailsys.freeclimb.api.CommonFields;
+
 
 /**
  * The class represents the common optional fields which can be passed in when
@@ -8,7 +8,7 @@ import com.vailsys.freeclimb.api.CommonFields;
  *
  * @see com.vailsys.freeclimb.api.call.CallsRequester#create(String,String,String,CallOptions)
  */
-public class CallOptions extends CommonFields {
+public class CallOptions {
 	/**
 	 * A string of keys to dial after connecting to the number. Refer to SendDigits
 	 * PerCL command for the format of the digits string.

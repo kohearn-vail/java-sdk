@@ -1,6 +1,6 @@
 package com.vailsys.freeclimb.api.account;
 
-import com.vailsys.freeclimb.api.CommonFields;
+
 
 /**
  * This class represents the optional fields which can be passed in when
@@ -9,7 +9,7 @@ import com.vailsys.freeclimb.api.CommonFields;
  * @see com.vailsys.freeclimb.api.account.AccountRequester#update(String,
  *      AccountUpdateOptions)
  */
-public class AccountUpdateOptions extends CommonFields {
+public class AccountUpdateOptions {
 
     /**
      * The alias of the account.

@@ -1,6 +1,6 @@
 package com.vailsys.freeclimb.api.conference;
 
-import com.vailsys.freeclimb.api.CommonFields;
+
 
 /**
  * The class represents the optional fields which can be passed in when updating
@@ -8,7 +8,7 @@ import com.vailsys.freeclimb.api.CommonFields;
  *
  * @see com.vailsys.freeclimb.api.conference.ConferencesRequester#update(String,ConferenceUpdateOptions)
  */
-public class ConferenceUpdateOptions extends CommonFields {
+public class ConferenceUpdateOptions {
 	/**
 	 * The alias of the conference.
 	 */

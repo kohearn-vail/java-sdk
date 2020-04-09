@@ -30,11 +30,6 @@ public class ParticipantUpdateOptionsTest {
         this.options.setListen(Boolean.parseBoolean(value));
     }
 
-    @When("^requestId is set to (RQ[a-fA-F0-9]{40}) in ParticipantUpdateOptions$")
-    public void setRequestId(String value){
-        this.options.setRequestId(value);
-    }
-
     @Then("^check that talk is (true|false) in ParticipantUpdateOptions$")
     public void checkTalk(String value){
         assertThat(this.options.getTalk(), is(Boolean.parseBoolean(value)));
@@ -43,11 +38,6 @@ public class ParticipantUpdateOptionsTest {
     @Then("^check that listen is (true|false) in ParticipantUpdateOptions$")
     public void checkListen(String value){
         assertThat(this.options.getListen(), is(Boolean.parseBoolean(value)));
-    }
-
-    @Then("^check that requestId is (RQ[a-fA-F0-9]{40}) in ParticipantUpdateOptions$")
-    public void checkRequestId(String value){
-        assertThat(this.options.getRequestId(), is(value));
     }
 
 }

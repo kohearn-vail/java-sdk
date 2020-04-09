@@ -131,25 +131,6 @@ public class MembersRequester extends APIAccountRequester {
     }
 
     /**
-     * Dequeue a single member from the queue. This wraps an HTTP POST to the
-     * FreeClimb API's /Accounts/$accountId/Queues/$queueId/Members/$callId
-     * endpoint.
-     *
-     * @param callId    The {@code callId} of the desired member.
-     * @param requestId The {@code requestId} of the request.
-     *
-     * @return The member matching the {@code callId} provided.
-     * @throws FreeClimbException when the request fails or the JSON is invalid.
-     */
-    public Member dequeue(String callId, String requestId) throws FreeClimbException {
-        try {
-            return Member.fromJson(this.POST(this.getMemberPath(callId), new DequeueMemberRequest(requestId).toJson()));
-        } catch (JsonIOException jioe) {
-            throw new FreeClimbJSONException(jioe);
-        }
-    }
-
-    /**
      * Dequeue a single member from the front of the queue. This wraps an HTTP POST
      * request to the FreeClimb API's
      * /Accounts/$accountId/Queues/$queueId/Members/Front endpoint.
@@ -162,23 +143,4 @@ public class MembersRequester extends APIAccountRequester {
         return Member.fromJson(this.POST(this.getMemberPath("Front"), null));
     }
 
-    /**
-     * Dequeue a single member from the front of the queue. This wraps an HTTP POST
-     * request to the FreeClimb API's
-     * /Accounts/$accountId/Queues/$queueId/Members/Front endpoint.
-     *
-     * @param requestId The {@code requestId} of the request.
-     *
-     * @return The member at the front of the queue.
-     * @throws FreeClimbException when the request fails or the response is not
-     *                            valid JSON.
-     */
-    public Member dequeueFront(String requestId) throws FreeClimbException {
-        try {
-            return Member
-                    .fromJson(this.POST(this.getMemberPath("Front"), new DequeueMemberRequest(requestId).toJson()));
-        } catch (JsonIOException jioe) {
-            throw new FreeClimbJSONException(jioe);
-        }
-    }
 }

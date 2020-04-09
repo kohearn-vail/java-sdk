@@ -1,12 +1,12 @@
 package com.vailsys.freeclimb.api.phoneNumber;
 
-import com.vailsys.freeclimb.api.CommonFields;
+
 
 /**
  * This class represents the optional fields which can be passed in when
  * updating an IncomingPhoneNumber.
  */
-public class IncomingPhoneNumberUpdateOptions extends CommonFields {
+public class IncomingPhoneNumberUpdateOptions {
     /**
      * The alias of the incoming phone number.
      */

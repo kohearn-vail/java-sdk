@@ -76,26 +76,6 @@ public class CallsRequesterTest {
 				.equals(Call.fromJson(CallsRequesterTest.aTestCall)));
 	}
 
-	@Then("^place a call from (\\+?[1-9]\\d{1,14}) to (\\+?[1-9]\\d{1,14}) using application (AP[0-9A-Fa-f]{40}) with requestId (.*)$")
-	public void placeApplicationCallWithRequestId(String from, String to, String applicationId, String requestId)
-			throws Throwable {
-		CallOptions options = new CallOptions();
-		options.setRequestId(requestId);
-		CreateCallRequest query = new CreateCallRequest(to, from, applicationId, options);
-
-		Helper.getMockServer()
-				.when(request().withMethod("POST").withPath(this.callsR.getPath()).withBody(query.toJson()))
-				.respond(response().withStatusCode(200).withBody(CallsRequesterTest.aTestCall));
-
-		assertTrue(this.callsR.create(to, from, applicationId, options)
-				.equals(Call.fromJson(CallsRequesterTest.aTestCall)));
-
-		Helper.getMockServer().verify(
-				request().withMethod("POST").withPath(this.callsR.getPath()).withBody(new JsonBody("{from:'" + from
-						+ "',to:'" + to + "', applicationId:'" + applicationId + "',requestId:'" + requestId + "'}")),
-				VerificationTimes.exactly(1));
-	}
-
 	@Then("^get a list of calls$")
 	public void getCallsList() throws Throwable {
 		Helper.getMockServer().when(request().withMethod("GET").withPath(this.callsR.getPath()))
@@ -161,26 +141,5 @@ public class CallsRequesterTest {
 				.withBody(gson.toJson(updates)), VerificationTimes.exactly(1));
 	}
 
-	@Then("^update a call with id (.*) to status (canceled|completed) with requestId (.*)$")
-	public void updateCall(String callId, String status, String requestId) throws Throwable {
-		CallsUpdateOptions updates = new CallsUpdateOptions();
-		updates.setRequestId(requestId);
-		if (status.equals("canceled")) {
-			updates.setStatus(CallStatus.CANCELED);
-		} else {
-			updates.setStatus(CallStatus.COMPLETED);
-		}
-
-		Helper.getMockServer()
-				.when(request().withMethod("POST").withPath(this.callsR.getPath() + "/" + callId)
-						.withBody(new JsonBody("{status:'" + status + "', requestId:'" + requestId + "'}")))
-				.respond(response().withStatusCode(200).withBody(CallsRequesterTest.aTestCall));
-
-		this.callsR.update(callId, updates);
-
-		Helper.getMockServer()
-				.verify(request().withMethod("POST").withPath(this.callsR.getPath() + "/" + callId)
-						.withBody(new JsonBody("{status:'" + status + "', requestId:'" + requestId + "'}")),
-						VerificationTimes.exactly(1));
-	}
+	
 }
