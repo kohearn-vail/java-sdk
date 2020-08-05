@@ -22,7 +22,7 @@ public class SayTest {
 	public void checkareNull() {
 		assertThat(this.command.getLoop(), nullValue());
 		assertThat(this.command.getConferenceId(), nullValue());
-		assertThat(this.command.getPrivacyMode(), nullValue())
+		assertThat(this.command.getPrivacyMode(), nullValue());
 	}
 
 	@Then("^set text to (.+) in Say object$")

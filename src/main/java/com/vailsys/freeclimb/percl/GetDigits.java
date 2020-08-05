@@ -97,4 +97,8 @@ public class GetDigits extends PerCLCommand {
 	public void setPrompts(LinkedList<GetDigitsNestable> prompts) {
 		this.prompts = prompts;
 	}
+
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.privacyMode = privacyMode;
+	}
 }
