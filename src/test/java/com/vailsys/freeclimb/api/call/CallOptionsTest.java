@@ -35,6 +35,7 @@ public class CallOptionsTest {
 		assertThat(this.options.getSendDigits(), nullValue());
 		assertThat(this.options.getIfMachine(), nullValue());
 		assertThat(this.options.getTimeout(), nullValue());
+		assertThat(this.options.getPrivacyMode(), nullValue());
 	}
 
 	@Then("^check that setSendDigits\\(\\) and getSendDigits\\(\\) are setting and retrieving the correct value.$")
@@ -63,5 +64,11 @@ public class CallOptionsTest {
 		String parentCallId = "CA0000000000000000000000000000000000000000";
 		this.options.setParentCallId(parentCallId);
 		assertThat(this.options.getParentCallId(), is(parentCallId));
+	}
+
+	@Then("^check that setPrivacyMode and getPrivacyMode are setting and retrieving the correct value.$")
+	public void checkSetGetPrivacyMode() {
+		this.options.setPrivacyMode(true);
+		assertThat(this.options.getPrivacyMode(), is(true));
 	}
 }

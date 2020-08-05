@@ -22,6 +22,7 @@ public class SayTest {
 	public void checkareNull() {
 		assertThat(this.command.getLoop(), nullValue());
 		assertThat(this.command.getConferenceId(), nullValue());
+		assertThat(this.command.getPrivacyMode(), nullValue())
 	}
 
 	@Then("^set text to (.+) in Say object$")
@@ -41,6 +42,11 @@ public class SayTest {
 		this.command.setConferenceId(conferenceId);
 	}
 
+	@Then("^set privacyMode to (true|false) in Say objects$")
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.command.setPrivacyMode(privacyMode);
+	}
+
 	@Then("^check that text is (.+) in the Say object$")
 	public void getText(String text) {
 		assertThat(this.command.getText(), is(text));
@@ -56,5 +62,10 @@ public class SayTest {
 	@Then("^check that conferenceId is (CF[0-9a-fA-F]{40}) in the Say object$")
 	public void getConferenceId(String conferenceId) {
 		assertThat(this.command.getConferenceId(), is(conferenceId));
+	}
+
+	@Then("^check that privacyMode is (true|false) in the Say objects$")
+	public void getPrivacyMode(Boolean privacyMode) {
+		assertThat(this.command.getPrivacyMode(), is(privacyMode));
 	}
 }
