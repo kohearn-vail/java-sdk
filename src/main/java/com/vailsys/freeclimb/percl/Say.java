@@ -5,6 +5,7 @@ public class Say extends PerCLCommand implements GetDigitsNestable, GetSpeechNes
 	private String language;
 	private Integer loop;
 	private String conferenceId;
+	private Boolean privacyMode;
 
 	public Say(String text) {
 		this.setText(text);
@@ -26,6 +27,10 @@ public class Say extends PerCLCommand implements GetDigitsNestable, GetSpeechNes
 		return this.conferenceId;
 	}
 
+	public Boolean getPrivacyMode() {
+		return this.privacyMode;
+	}
+
 	public void setText(String text) {
 		this.text = text;
 	}
@@ -40,5 +45,9 @@ public class Say extends PerCLCommand implements GetDigitsNestable, GetSpeechNes
 
 	public void setConferenceId(String conferenceId) {
 		this.conferenceId = conferenceId;
+	}
+
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.privacyMode = privacyMode;
 	}
 }

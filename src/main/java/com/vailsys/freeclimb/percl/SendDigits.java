@@ -8,6 +8,7 @@ public class SendDigits extends PerCLCommand {
 
 	private String digits;
 	private Integer pauseMs;
+	private Boolean privacyMode;
 
 	public SendDigits(String digits) {
 		this.setDigits(digits);
@@ -21,11 +22,19 @@ public class SendDigits extends PerCLCommand {
 		return this.pauseMs;
 	}
 
+	public Boolean getPrivacyMode() {
+		return this.privacyMode;
+	}
+
 	public void setDigits(String digits) {
 		this.digits = digits;
 	}
 
 	public void setPauseMs(Integer pauseMs) {
 		this.pauseMs = pauseMs;
+	}
+
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.privacyMode = privacyMode;
 	}
 }

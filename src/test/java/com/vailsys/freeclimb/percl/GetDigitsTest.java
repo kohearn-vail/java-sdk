@@ -29,6 +29,7 @@ public class GetDigitsTest {
 		assertThat(this.command.getMaxDigits(), nullValue());
 		assertThat(this.command.getFlushBuffer(), nullValue());
 		assertThat(this.command.getPrompts(), nullValue());
+		assertThat(this.command.getPrivacyMode(), nullValue());
 	}
 
 	@Then("^set GetDigits actionUrl to (.*)$")
@@ -81,6 +82,11 @@ public class GetDigitsTest {
 		this.command.setPrompts(prompts);
 	}
 
+	@Then("^set GetDigits privacyMode to (true|false)$")
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.command.setPrivacyMode(privacyMode);
+	}
+
 	@Then("^check that actionUrl equals (.*) in GetDigits object$")
 	public void getActionUrl(String actionUrl) {
 		assertThat(this.command.getActionUrl(), is(actionUrl));
@@ -125,5 +131,10 @@ public class GetDigitsTest {
 	public void checkSerialize(){
 		String serialized = this.command.toJson();
 		assertThat(serialized, is("{\"GetDigits\":{\"actionUrl\":\"http://action.url/end/point\",\"prompts\":[{\"Say\":{\"text\":\"test\"}},{\"Pause\":{\"length\":100}}]}}"));
+	}
+
+	@Then("^check that privacyMode equals (true|false) in GetDigits objects$")
+	public void getPrivacyMode(Boolean privacyMode) {
+		assertThat(this.command.getPrivacyMode(), is(privacyMode));
 	}
 }

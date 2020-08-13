@@ -25,6 +25,7 @@ public class OutDialTest {
 		assertThat(this.command.getIfMachine(), nullValue());
 		assertThat(this.command.getIfMachineUrl(), nullValue());
 		assertThat(this.command.getStatusCallbackUrl(), nullValue());
+		assertThat(this.command.getPrivacyMode(), nullValue());
 	}
 	@Then("^check that destination is (\\+1[0-9]{10}) in the OutDial object$")
 	public void checkDestination(String destination) {
@@ -113,5 +114,15 @@ public class OutDialTest {
 	@Then("^set statusCallbackUrl to (.*) in OutDial object$")
 	public void setStatusCallbackUrl(String statusCallbackUrl) {
 		this.command.setStatusCallbackUrl(statusCallbackUrl);
+	}
+
+	@Then("^set privacyMode to (true|false) in OutDial objects$")
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.command.setPrivacyMode(privacyMode);
+	}
+
+	@Then("^check that privacyMode is (true|false) in the OutDial object$")
+	public void checkPrivacyMode(Boolean privacyMode) {
+		assertThat(this.command.getPrivacyMode(), is(privacyMode));
 	}
 }
