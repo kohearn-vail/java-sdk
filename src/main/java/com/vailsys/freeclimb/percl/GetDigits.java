@@ -16,6 +16,7 @@ public class GetDigits extends PerCLCommand {
 	private Integer maxDigits;
 	private Boolean flushBuffer;
 	private LinkedList<GetDigitsNestable> prompts;
+	private Boolean privacyMode;
 
 	public GetDigits(String actionUrl) {
 		this.setActionUrl(actionUrl);
@@ -57,6 +58,10 @@ public class GetDigits extends PerCLCommand {
 		return this.prompts;
 	}
 
+	public Boolean getPrivacyMode() {
+		return this.privacyMode;
+	}
+
 	public void setActionUrl(String actionUrl) {
 		this.actionUrl = actionUrl;
 	}
@@ -91,5 +96,9 @@ public class GetDigits extends PerCLCommand {
 
 	public void setPrompts(LinkedList<GetDigitsNestable> prompts) {
 		this.prompts = prompts;
+	}
+
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.privacyMode = privacyMode;
 	}
 }

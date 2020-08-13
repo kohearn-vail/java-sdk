@@ -22,6 +22,7 @@ public class PlayTest {
 	public void checkareNull() {
 		assertThat(this.command.getLoop(), nullValue());
 		assertThat(this.command.getConferenceId(), nullValue());
+		assertThat(this.command.getPrivacyMode(), nullValue());
 	}
 
 	@Then("^set file to (.+) in Play object$")
@@ -36,6 +37,10 @@ public class PlayTest {
 	public void setConferenceId(String conferenceId) {
 		this.command.setConferenceId(conferenceId);
 	}
+	@Then("^set privacyMode to (true|false) in Play object$")
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.command.setPrivacyMode(privacyMode);
+	}
 
 	@Then("^check that file is (.+) in the Play object$")
 	public void getFile(String file) {
@@ -48,5 +53,9 @@ public class PlayTest {
 	@Then("^check that conferenceId is (CF[0-9a-fA-F]{40}) in the Play object$")
 	public void getConferenceId(String conferenceId) {
 		assertThat(this.command.getConferenceId(), is(conferenceId));
+	}
+	@Then("^check that privacyMode is (true|false) in the Play objects$")
+	public void getPrivacyMode(Boolean privacyMode) {
+		assertThat(this.command.getPrivacyMode(), is(privacyMode));
 	}
 }

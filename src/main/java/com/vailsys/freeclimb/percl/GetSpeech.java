@@ -16,6 +16,7 @@ public class GetSpeech extends PerCLCommand {
 	private Integer speechCompleteTimeoutMs;
 	private Integer speechIncompleteTimeoutMs;
 	private LinkedList<GetSpeechNestable> prompts;
+	private Boolean privacyMode;
 
 	public GetSpeech(String actionUrl, String grammarFile) {
 		this.setActionUrl(actionUrl);
@@ -74,6 +75,10 @@ public class GetSpeech extends PerCLCommand {
 		return this.prompts;
 	}
 
+	public Boolean getPrivacyMode() {
+		return this.privacyMode;
+	}
+
 	public void setActionUrl(String actionUrl) {
 		this.actionUrl = actionUrl;
 	}
@@ -124,5 +129,9 @@ public class GetSpeech extends PerCLCommand {
 
 	public void setPrompts(LinkedList<GetSpeechNestable> prompts) {
 		this.prompts = prompts;
+	}
+
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.privacyMode = privacyMode;
 	}
 }

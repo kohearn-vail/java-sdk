@@ -4,6 +4,7 @@ public class Play extends PerCLCommand implements GetDigitsNestable, GetSpeechNe
 	private String file;
 	private Integer loop;
 	private String conferenceId;
+	private Boolean privacyMode;
 
 	public Play(String file) {
 		this.setFile(file);
@@ -21,6 +22,10 @@ public class Play extends PerCLCommand implements GetDigitsNestable, GetSpeechNe
 		return this.conferenceId;
 	}
 
+	public Boolean getPrivacyMode() {
+		return this.privacyMode;
+	}
+
 	public void setFile(String file) {
 		this.file = file;
 	}
@@ -31,5 +36,9 @@ public class Play extends PerCLCommand implements GetDigitsNestable, GetSpeechNe
 
 	public void setConferenceId(String conferenceId) {
 		this.conferenceId = conferenceId;
+	}
+
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.privacyMode = privacyMode;
 	}
 }

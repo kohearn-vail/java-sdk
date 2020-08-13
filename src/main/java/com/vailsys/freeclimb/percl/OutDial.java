@@ -11,6 +11,7 @@ public class OutDial extends PerCLCommand {
 	private OutDialIfMachine ifMachine;
 	private String ifMachineUrl;
 	private String statusCallbackUrl;
+	private Boolean privacyMode;
 
 	public OutDial(String destination, String callingNumber, String actionUrl, String callConnectUrl) {
 		this.setDestination(destination);
@@ -55,6 +56,10 @@ public class OutDial extends PerCLCommand {
 		return this.statusCallbackUrl;
 	}
 
+	public Boolean getPrivacyMode() {
+		return this.privacyMode;
+	}
+
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
@@ -91,4 +96,7 @@ public class OutDial extends PerCLCommand {
 		this.statusCallbackUrl = statusCallbackUrl;
 	}
 
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.privacyMode = privacyMode;
+	}
 }

@@ -32,6 +32,11 @@ public class CallOptions {
 	private String parentCallId;
 
 	/**
+	 * Parameter privacyMode will not log the text as required by PCI compliance.
+	 */
+	private Boolean privacyMode;
+
+	/**
 	 * Create an empty {@code CallOptions} object. Set only values that are desired
 	 * to be included in the request. Any unset fields will be ignored.
 	 */
@@ -40,6 +45,7 @@ public class CallOptions {
 		ifMachine = null;
 		timeout = null;
 		parentCallId = null;
+		privacyMode = null;
 	}
 
 	/**
@@ -79,6 +85,15 @@ public class CallOptions {
 	}
 
 	/**
+	 * Sets the privacyMode field.
+	 *
+	 * @param privacyMode Value to which to set privacyMode.
+	 */
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.privacyMode = privacyMode;
+	}
+	
+	/**
 	 * Retrieve the sendDigits value.
 	 * 
 	 * @return The sendDigits value of the object.
@@ -114,6 +129,15 @@ public class CallOptions {
 	 */
 	public String getParentCallId() {
 		return this.parentCallId;
+	}
+
+	/**
+	 * Retrieve the privacyMode value.
+	 * 
+	 * @return The privacyMode value of the object.
+	 */
+	public Boolean getPrivacyMode() {
+		return this.privacyMode;
 	}
 
 }

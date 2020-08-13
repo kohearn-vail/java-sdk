@@ -32,6 +32,7 @@ public class GetSpeechTest {
 		assertThat(this.command.getSpeechCompleteTimeoutMs(), nullValue());
 		assertThat(this.command.getSpeechIncompleteTimeoutMs(), nullValue());
 		assertThat(this.command.getPrompts(), nullValue());
+		assertThat(this.command.getPrivacyMode(), nullValue());
 	}
 
 	@Then("^set GetSpeech actionUrl to (.*)$")
@@ -105,6 +106,11 @@ public class GetSpeechTest {
 		this.command.setPrompts(prompts);
 	}
 
+	@Then("^set privacyMode to (true|false) in GetSpeech object$")
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.command.setPrivacyMode(privacyMode);
+	}
+
 	@Then("^check that actionUrl equals (.*) in GetSpeech object$")
 	public void getActionUrl(String actionUrl) {
 		assertThat(this.command.getActionUrl(), is(actionUrl));
@@ -170,5 +176,10 @@ public class GetSpeechTest {
 	public void checkSerial(){
 		String serialized = this.command.toJson();
 		assertThat(serialized, is("{\"GetSpeech\":{\"actionUrl\":\"http://action.url/end/point\",\"grammarFile\":\"/path/to/grammar/File\",\"prompts\":[{\"Say\":{\"text\":\"test\"}},{\"Pause\":{\"length\":100}}]}}"));
+	}
+
+	@Then("^check that the privacyMode equals (true|false) in GetSpeech object$")
+	public void checkPrivacyMode(Boolean privacyMode) {
+		assertThat(this.command.getPrivacyMode(), is(privacyMode));
 	}
 }
