@@ -56,7 +56,7 @@ The [FreeClimb documentation ](https://docs.freeclimb.com/docs) has guides on [g
 
 ## Getting Help
 
-If you are experiencing difficulties, contact our support team at [support@freeclimb.com](mailto:support@freeclimb.com).
+If you are experiencing difficulties, [contact support](https://freeclimb.com/support).
 
 ## Dependencies
 
