@@ -7,6 +7,7 @@ public class RecordUtterance extends PerCLCommand {
 	private Integer maxLengthSec;
 	private Boolean playBeep;
 	private Boolean autoStart;
+	private Boolean privacyMode;
 
 	public RecordUtterance(String actionUrl) {
 		this.setActionUrl(actionUrl);
@@ -40,6 +41,10 @@ public class RecordUtterance extends PerCLCommand {
 		return this.autoStart;
 	}
 
+	public Boolean getPrivacyMode() {
+		return this.privacyMode;
+	}
+
 	public void setActionUrl(String actionUrl) {
 		this.actionUrl = actionUrl;
 	}
@@ -66,5 +71,9 @@ public class RecordUtterance extends PerCLCommand {
 
 	public void setAutoStart(Boolean autoStart) {
 		this.autoStart = autoStart;
+	}
+
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.privacyMode = privacyMode;
 	}
 }

@@ -18,3 +18,5 @@ Feature: RecordUtterance
 		Then check that playBeep is true in the RecordUtterance object
 		Then set autoStart to false in the RecordUtterance object
 		Then check that autoStart is false in the RecordUtterance object
+		Then set privacyMode to true in the RecordUtterance object
+		Then check that privacyMode is true in the RecordUtterance object

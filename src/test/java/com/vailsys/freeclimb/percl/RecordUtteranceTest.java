@@ -85,6 +85,10 @@ public class RecordUtteranceTest {
 	public void setAutoStart(Boolean autoStart) {
 		this.command.setAutoStart(autoStart);
 	}
+	@Then("^set privacyMode to (true|false) in the RecordUtterance object$")
+	public void setPrivacyMode(Boolean privacyMode) {
+		this.command.setPrivacyMode(privacyMode);
+	}
 
 	@Then("^check that actionUrl is (.+) in the RecordUtterance object$")
 	public void getActionUrl(String actionUrl) {
@@ -109,5 +113,9 @@ public class RecordUtteranceTest {
 	@Then("^check that autoStart is (true|false) in the RecordUtterance object$")
 	public void getAutoStart(Boolean autoStart) {
 		assertThat(this.command.getAutoStart(), is(autoStart));
+	}
+	@Then("^check that privacyMode is (true|false) in the RecordUtterance object$")
+	public void getPrivacyMode(Boolean privacyMode) {
+		assertThat(this.command.getPrivacyMode(), is(privacyMode));
 	}
 }
