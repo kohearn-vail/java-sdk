@@ -8,12 +8,16 @@ import com.google.gson.annotations.SerializedName;
  * indicates the status of the message.
  */
 public enum Status {
-    @SerializedName("sent")
-    SENT, @SerializedName("failed")
-    FAILED, @SerializedName("queued")
+    @SerializedName("new")
+    NEW, @SerializedName("queued")
     QUEUED, @SerializedName("rejected")
-    REJECTED, @SerializedName("received")
-    RECEIVED, @SerializedName("sending")
-    SENDING, @SerializedName("undelivered")
-    UNDELIVERED
+    REJECTED, @SerializedName("sending")
+    SENDING, @SerializedName("sent")
+    SENT, @SerializedName("failed")
+    FAILED, @SerializedName("received")
+    RECEIVED, @SerializedName("undelivered")
+    UNDELIVERED, @SerializedName("expired")
+    EXPIRED, @SerializedName("deleted")
+    DELETED, @SerializedName("unknown")
+    UNKNOWN
 }
