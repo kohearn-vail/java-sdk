@@ -50,13 +50,16 @@ public class CallsRequesterTest {
 
 	@Then("^place a call from (\\+?[1-9]\\d{1,14}) to (\\+?[1-9]\\d{1,14}) using application (AP[0-9A-Fa-f]{40})$")
 	public void placeApplicationCall(String from, String to, String applicationId) throws Throwable {
-		CreateCallRequest query = new CreateCallRequest(from, to, applicationId, null);
+		CallOptions options = new CallOptions();
+		options.setApplicationId(applicationId);
+		
+		CreateCallRequest query = new CreateCallRequest(from, to, options);
 
 		Helper.getMockServer()
 				.when(request().withMethod("POST").withPath(this.callsR.getPath()).withBody(query.toJson()))
 				.respond(response().withStatusCode(200).withBody(CallsRequesterTest.aTestCall));
 
-		assertTrue(this.callsR.create(from, to, applicationId).equals(Call.fromJson(CallsRequesterTest.aTestCall)));
+		assertTrue(this.callsR.create(from, to, options).equals(Call.fromJson(CallsRequesterTest.aTestCall)));
 	}
 
 	@Then("^place a call from (\\+?[1-9]\\d{1,14}) to (\\+?[1-9]\\d{1,14}) using application (AP[0-9A-Fa-f]{40}) with options$")
@@ -65,14 +68,15 @@ public class CallsRequesterTest {
 
 		CallOptions options = new CallOptions();
 		options.setTimeout(timeout);
+		options.setApplicationId(applicationId);
 
-		CreateCallRequest query = new CreateCallRequest(from, to, applicationId, options);
+		CreateCallRequest query = new CreateCallRequest(from, to, options);
 
 		Helper.getMockServer()
 				.when(request().withMethod("POST").withPath(this.callsR.getPath()).withBody(query.toJson()))
 				.respond(response().withStatusCode(200).withBody(CallsRequesterTest.aTestCall));
 
-		assertTrue(this.callsR.create(from, to, applicationId, options)
+		assertTrue(this.callsR.create(from, to, options)
 				.equals(Call.fromJson(CallsRequesterTest.aTestCall)));
 	}
 

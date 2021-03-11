@@ -7,6 +7,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 None
 
+<a name="3.0.4"></a>
+## [3.0.4] - 2021-03-10
+### Added
+- Add `callConnectUrl` option to MakeCall Request
+
 <a name="3.0.3"></a>
 ## [3.0.3] - 2020-12-16
 ### Added

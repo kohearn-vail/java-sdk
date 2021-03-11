@@ -16,28 +16,22 @@ import java.util.Map;
 class CreateCallRequest {
 	public String to;
 	public String from;
-
-	public String applicationId;
-
 	public CallOptions options;
 
 	/**
-	 * Setup a new call creation payload using an applicationId.
+	 * Setup a new call creation payload.
 	 *
 	 * @param to            The number to call out to (DNIS). This can be any valid
 	 *                      phone number formatted in E.164 format.
 	 * @param from          The number to call from (ANI). This must be a number
 	 *                      purchase from FreeClimb or a verified phone number owned
 	 *                      by the user.
-	 * @param applicationId The {@code applicationId} for the registered FreeClimb
-	 *                      application which should handle this call.
 	 * @param options       Optional arguments that can be provided when creating a
 	 *                      call. See FreeClimb documentation for details.
 	 */
-	public CreateCallRequest(String to, String from, String applicationId, CallOptions options) {
+	public CreateCallRequest(String to, String from, CallOptions options) {
 		this.to = to;
 		this.from = from;
-		this.applicationId = applicationId;
 		this.options = options;
 	}
 

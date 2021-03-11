@@ -100,7 +100,7 @@ public class CallsRequester extends APIAccountRequester {
 	 * @throws FreeClimbException when the request fails or the JSON is invalid.
 	 */
 	public Call create(String to, String from, String applicationId) throws FreeClimbException {
-		return this.create(to, from, applicationId, (CallOptions) null);
+		return this.create(to, from, (CallOptions) null);
 	}
 
 	/**
@@ -114,8 +114,6 @@ public class CallsRequester extends APIAccountRequester {
 	 * @param from          The number to call from (ANI). This must be a number
 	 *                      purchase from FreeClimb or a verified phone number owned
 	 *                      by the user.
-	 * @param applicationId The {@code applicationId} for the registered FreeClimb
-	 *                      application which should handle this call.
 	 * @param callOptions   Optional arguments that can be provided when creating a
 	 *                      call. See FreeClimb documentation for details.
 	 *
@@ -125,11 +123,11 @@ public class CallsRequester extends APIAccountRequester {
 	 * @see com.vailsys.freeclimb.api.call.CallOptions
 	 * @throws FreeClimbException when the request fails or the JSON is invalid.
 	 */
-	public Call create(String to, String from, String applicationId, CallOptions callOptions)
+	public Call create(String to, String from, CallOptions callOptions)
 			throws FreeClimbException {
 		try {
 			return Call.fromJson(
-					this.POST(this.path, new CreateCallRequest(to, from, applicationId, callOptions).toJson()));
+					this.POST(this.path, new CreateCallRequest(to, from, callOptions).toJson()));
 		} catch (JsonIOException jioe) {
 			throw new FreeClimbJSONException(jioe);
 		}

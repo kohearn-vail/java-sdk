@@ -27,7 +27,7 @@ public class CallOptions {
 	 */
 	private Integer timeout;
 	/**
-	 * The callId of the call that created this call (if one exists).
+	 * The callId of the call that created this call (if one exists). Required if no `applicationId` or `callConnectUrl` has been provided.
 	 */
 	private String parentCallId;
 
@@ -35,6 +35,12 @@ public class CallOptions {
 	 * Parameter privacyMode will not log the text as required by PCI compliance.
 	 */
 	private Boolean privacyMode;
+
+	/**
+	 * The applicationId for the registered FreeClimb application which should
+	 * handle this call. Required if no `parentCallId` or `callConnectUrl` has been provided.
+	 */
+	private String applicationId;
 
 	/**
 	 * Create an empty {@code CallOptions} object. Set only values that are desired
@@ -46,6 +52,7 @@ public class CallOptions {
 		timeout = null;
 		parentCallId = null;
 		privacyMode = null;
+		applicationId = null;
 	}
 
 	/**
@@ -91,6 +98,15 @@ public class CallOptions {
 	 */
 	public void setPrivacyMode(Boolean privacyMode) {
 		this.privacyMode = privacyMode;
+	}
+
+	/**
+	 * Sets the applicationId field.
+	 *
+	 * @param applicationId Value to which to set applicationId.
+	 */
+	public void setApplicationId(String applicationId) {
+		this.applicationId = applicationId;
 	}
 	
 	/**
@@ -140,4 +156,12 @@ public class CallOptions {
 		return this.privacyMode;
 	}
 
+	/**
+	 * Retrieve the applicationId value.
+	 *
+	 * @return The applicationId value of the object.
+	 */
+	public String getApplicationId() {
+		return this.applicationId;
+	}
 }
