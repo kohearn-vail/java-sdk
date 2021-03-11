@@ -6,7 +6,7 @@ package com.vailsys.freeclimb.api.call;
  * The class represents the common optional fields which can be passed in when
  * creating a Call.
  *
- * @see com.vailsys.freeclimb.api.call.CallsRequester#create(String,String,String,CallOptions)
+ * @see com.vailsys.freeclimb.api.call.CallsRequester#create(String,String,CallOptions)
  */
 public class CallOptions {
 	/**
