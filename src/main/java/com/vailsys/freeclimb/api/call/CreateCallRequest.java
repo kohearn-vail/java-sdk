@@ -16,6 +16,7 @@ import java.util.Map;
 class CreateCallRequest {
 	public String to;
 	public String from;
+	public String applicationId;
 	public CallOptions options;
 
 	/**
@@ -26,12 +27,16 @@ class CreateCallRequest {
 	 * @param from          The number to call from (ANI). This must be a number
 	 *                      purchase from FreeClimb or a verified phone number owned
 	 *                      by the user.
+	 * @param applicationId The {@code applicationId} for the registered FreeClimb
+	 *                      application which should handle this call.Required if
+	 *                      no `parentCallId` or `callConnectUrl` has been provided.
 	 * @param options       Optional arguments that can be provided when creating a
 	 *                      call. See FreeClimb documentation for details.
 	 */
-	public CreateCallRequest(String to, String from, CallOptions options) {
+	public CreateCallRequest(String to, String from, String applicationId, CallOptions options) {
 		this.to = to;
 		this.from = from;
+		this.applicationId = applicationId;
 		this.options = options;
 	}
 

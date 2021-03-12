@@ -36,7 +36,6 @@ public class CallOptionsTest {
 		assertThat(this.options.getIfMachine(), nullValue());
 		assertThat(this.options.getTimeout(), nullValue());
 		assertThat(this.options.getPrivacyMode(), nullValue());
-		assertThat(this.options.getApplicationId(), nullValue());
 	}
 
 	@Then("^check that setSendDigits\\(\\) and getSendDigits\\(\\) are setting and retrieving the correct value.$")
@@ -71,12 +70,5 @@ public class CallOptionsTest {
 	public void checkSetGetPrivacyMode() {
 		this.options.setPrivacyMode(true);
 		assertThat(this.options.getPrivacyMode(), is(true));
-	}
-
-	@Then("^check that setApplicationId and getApplicationId are setting and retrieving the correct value.$")
-	public void checkSetGetApplicationId() {
-		String applicationId = "AP0000000000000000000000000000000000000000";
-		this.options.setApplicationId(applicationId);
-		assertThat(this.options.getApplicationId(), is(applicationId));
 	}
 }

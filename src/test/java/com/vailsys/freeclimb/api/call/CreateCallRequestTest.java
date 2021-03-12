@@ -21,18 +21,16 @@ public class CreateCallRequestTest {
 
 	CreateCallRequest request;
 
-	@Given("^a CreateCallRequest with base options.$")
+	@Given("^a CreateCallRequest without options.$")
 	public void create() {
 		this.applicationId = "AP1234567890123456789012345678901234567890";
 
 		this.sendDigits = null;
 		this.ifMachine = null;
 		this.timeout = null;
-		this.options = new CallOptions();
+		this.options = null;
 
-		this.options.setApplicationId(this.applicationId);
-
-		this.request = new CreateCallRequest(this.to, this.from, this.options);
+		this.request = new CreateCallRequest(this.to, this.from, this.applicationId, null);
 	}
 
 	@Given("^a CreateCallRequest with options.$")
@@ -46,21 +44,21 @@ public class CreateCallRequestTest {
 		this.options.setSendDigits(this.sendDigits);
 		this.options.setIfMachine(this.ifMachine);
 		this.options.setTimeout(this.timeout);
-		this.options.setApplicationId(this.applicationId);
-
-		this.request = new CreateCallRequest(this.to, this.from, this.options);
+		
+		this.request = new CreateCallRequest(this.to, this.from, this.applicationId, this.options);
 	}
 
 	@Then("^check that it set all fields correctly.$")
 	public void checkToField() {
 		assertThat(this.request.to, is(this.to));
 		assertThat(this.request.from, is(this.from));
+		assertThat(this.request.applicationId, is(this.applicationId));
 		assertThat(this.request.options, is(this.options));
 	}
 
 	@Then("^check that it can produce JSON from the base object.$")
 	public void checkJson() {
-		String json = "{\"to\":\""+this.request.to+"\",\"from\":\""+this.request.from+"\",\"applicationId\":\""+this.applicationId+"\"}";
+		String json = "{\"to\":\""+this.request.to+"\",\"from\":\""+this.request.from+"\",\"applicationId\":\""+this.request.applicationId+"\"}";
 		assertThat(this.request.toJson(), is(json));
 	}
 
