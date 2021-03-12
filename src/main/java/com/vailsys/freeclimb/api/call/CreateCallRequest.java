@@ -28,7 +28,7 @@ class CreateCallRequest {
 	 *                      purchase from FreeClimb or a verified phone number owned
 	 *                      by the user.
 	 * @param applicationId The {@code applicationId} for the registered FreeClimb
-	 *                      application which should handle this call.Required if
+	 *                      application which should handle this call. Required if
 	 *                      no `parentCallId` or `callConnectUrl` has been provided.
 	 * @param options       Optional arguments that can be provided when creating a
 	 *                      call. See FreeClimb documentation for details.

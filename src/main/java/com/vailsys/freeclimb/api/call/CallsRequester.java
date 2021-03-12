@@ -116,7 +116,7 @@ public class CallsRequester extends APIAccountRequester {
 	 *                      by the user.
 	 * @param applicationId The {@code applicationId} for the registered FreeClimb
 	 *                      application which should handle this call. Required if
-	 *                      no `parentCallId` or `callConnectUrl` has been provided.s
+	 *                      no `parentCallId` or `callConnectUrl` has been provided.
 	 * @param callOptions   Optional arguments that can be provided when creating a
 	 *                      call. See FreeClimb documentation for details.
 	 *

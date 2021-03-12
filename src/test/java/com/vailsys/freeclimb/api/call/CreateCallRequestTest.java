@@ -36,6 +36,7 @@ public class CreateCallRequestTest {
 	@Given("^a CreateCallRequest with options.$")
 	public void createWithOptions() {
 		this.applicationId = "AP1234567890123456789012345678901234567890";
+
 		this.sendDigits = "1234";
 		this.ifMachine = IfMachine.HANGUP;
 		this.timeout = 16;
@@ -44,7 +45,7 @@ public class CreateCallRequestTest {
 		this.options.setSendDigits(this.sendDigits);
 		this.options.setIfMachine(this.ifMachine);
 		this.options.setTimeout(this.timeout);
-		
+
 		this.request = new CreateCallRequest(this.to, this.from, this.applicationId, this.options);
 	}
 
