@@ -36,6 +36,7 @@ public class CallOptionsTest {
 		assertThat(this.options.getIfMachine(), nullValue());
 		assertThat(this.options.getTimeout(), nullValue());
 		assertThat(this.options.getPrivacyMode(), nullValue());
+		assertThat(this.options.getCallConnectUrl(), nullValue());
 	}
 
 	@Then("^check that setSendDigits\\(\\) and getSendDigits\\(\\) are setting and retrieving the correct value.$")
@@ -70,5 +71,12 @@ public class CallOptionsTest {
 	public void checkSetGetPrivacyMode() {
 		this.options.setPrivacyMode(true);
 		assertThat(this.options.getPrivacyMode(), is(true));
+	}
+
+	@Then("^check that setCallConnectUrl and getCallConnectUrl are setting and retrieving the correct value.$")
+	public void checkSetGetCallConnectUrl() {
+		String callConnectUrl = "http://www.example.com/callConnectUrl";
+		this.options.setCallConnectUrl(callConnectUrl);
+		assertThat(this.options.getCallConnectUrl(), is(callConnectUrl));
 	}
 }

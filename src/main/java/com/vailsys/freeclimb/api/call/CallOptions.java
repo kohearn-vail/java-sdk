@@ -30,11 +30,17 @@ public class CallOptions {
 	 * The callId of the call that created this call (if one exists). Required if no `applicationId` or `callConnectUrl` has been provided.
 	 */
 	private String parentCallId;
-
 	/**
 	 * Parameter privacyMode will not log the text as required by PCI compliance.
 	 */
 	private Boolean privacyMode;
+	/**
+	 * The URL that FreeClimb should use to handle this phone call.
+	 * If an applicationId or parentCallId have already been provided,
+	 * this callConnectUrl attribute will be used as a replacement of the
+	 * callConnectUrl originally assigned in the application or parent call.
+	 */
+	private String callConnectUrl;
 
 	/**
 	 * Create an empty {@code CallOptions} object. Set only values that are desired
@@ -46,6 +52,7 @@ public class CallOptions {
 		timeout = null;
 		parentCallId = null;
 		privacyMode = null;
+		callConnectUrl = null;
 	}
 
 	/**
@@ -91,6 +98,15 @@ public class CallOptions {
 	 */
 	public void setPrivacyMode(Boolean privacyMode) {
 		this.privacyMode = privacyMode;
+	}
+
+	/**
+	 * Sets the callConnectUrl field.
+	 * 
+	 * @param callConnectUrl Value to set callConnectUrl.
+	 */
+	public void setCallConnectUrl(String callConnectUrl) {
+		this.callConnectUrl = callConnectUrl;
 	}
 	
 	/**
@@ -139,4 +155,14 @@ public class CallOptions {
 	public Boolean getPrivacyMode() {
 		return this.privacyMode;
 	}
+
+	/**
+	 * Retrieve the callConnectUrl value.
+	 * 
+	 * @return The callConnectUrl value of the object.
+	 */
+	public String getCallConnectUrl() {
+		return this.callConnectUrl;
+	}
+
 }
