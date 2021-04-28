@@ -7,6 +7,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 None
 
+<a name="4.0.0"></a>
+## [4.0.0] - 2021-05-03
+### Added
+- Add `verifyRequest` utility function
+
 <a name="3.0.3"></a>
 ## [3.0.3] - 2020-12-16
 ### Added

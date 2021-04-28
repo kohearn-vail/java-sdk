@@ -5,11 +5,11 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'maven'
 
-group = 'com.github.FreeClimbAPI'
+group = 'com.github.kohearn-vail'
 
 sourceCompatibility = 1.7 // java 7
 targetCompatibility = 1.7
-version = '3.0.3'
+version = '4.0.0'
 
 repositories {
 	mavenCentral()
@@ -23,6 +23,8 @@ dependencies {
 	testCompile 'junit:junit:4.12'
 
 	compile 'com.google.code.gson:gson:2.6.2'
+	implementation group: 'commons-codec', name: 'commons-codec', version: '1.7'
+
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
