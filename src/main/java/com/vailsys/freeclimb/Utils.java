@@ -25,10 +25,10 @@ public class Utils {
      *                            provided
      * @throws FreeClimbException upon failed verification
 	 */
-	public static void verifyRequest(String requestBody, String signatureHeader, String signingSecret, int tolerance) throws FreeClimbException {
+	public void verifyRequest(String requestBody, String signatureHeader, String signingSecret, int tolerance) throws FreeClimbException {
 		String[] values = signatureHeader.split(",");
 
-        String time = new String();
+        long time = 0;
         List<String> v1 = new ArrayList<String>();
         for (String queryString : values) {
             try {
@@ -40,7 +40,7 @@ public class Utils {
                     ? queryString.substring(idex + 1)
                     : null;
                 if (key.equals("t")) {
-                    time = value;
+                    time = Long.parseLong(value);
                 }
                 if (key.equals("v1")) {
                     v1.add(value);
@@ -57,12 +57,16 @@ public class Utils {
         }
 
         String data = time + "." + requestBody;
-        Mac mac = Mac.getInstance("HmacSHA256");
-        mac.init(new SecretKeySpec(signingSecret.getBytes(), "HmacSHA256"));
-        String hmac = Hex.encodeHexString(mac.doFinal(data.getBytes()));
+        try {
+            Mac mac = Mac.getInstance("HmacSHA256");
+            mac.init(new SecretKeySpec(signingSecret.getBytes(), "HmacSHA256"));
+            String hmac = Hex.encodeHexString(mac.doFinal(data.getBytes()));
 
-        if (!v1.contains(hmac)) {
-            throw new FreeClimbException(String.format("Request rejected - request signature failed"));
+            if (!v1.contains(hmac)) {
+                throw new FreeClimbException(String.format("Request rejected - request signature failed"));
+            }
+        } catch (Exception e) {
+            throw new FreeClimbException("Failed to calculate hmac using ", e);
         }
 	}
 
@@ -74,7 +78,7 @@ public class Utils {
      * @param signingSecret       A signing secret from the FreeClimb account
      * @throws FreeClimbException upon failed verification
 	 */
-    public static void verifyRequest(String requestBody, String signatureHeader, String signingSecret) {
-		this.verifyRequest(requestBody, signatureHeader, signingSecret, 5*60*1000)
+    public void verifyRequest(String requestBody, String signatureHeader, String signingSecret) throws FreeClimbException {
+		this.verifyRequest(requestBody, signatureHeader, signingSecret, 5*60*1000);
 	}
 }
