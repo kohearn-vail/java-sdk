@@ -78,7 +78,7 @@ public class Utils {
      * @param signingSecret       A signing secret from the FreeClimb account
      * @throws FreeClimbException upon failed verification
 	 */
-    public void verifyRequest(String requestBody, String signatureHeader, String signingSecret) throws FreeClimbException {
-		this.verifyRequest(requestBody, signatureHeader, signingSecret, 5*60*1000);
+    public static void verifyRequest(String requestBody, String signatureHeader, String signingSecret) throws FreeClimbException {
+		Utils.verifyRequest(requestBody, signatureHeader, signingSecret, 5*60*1000);
 	}
 }
