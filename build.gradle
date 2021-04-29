@@ -5,7 +5,7 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'maven'
 
-group = 'com.github.kohearn-vail'
+group = 'com.github.FreeClimbAPI'
 
 sourceCompatibility = 1.7 // java 7
 targetCompatibility = 1.7
@@ -24,7 +24,6 @@ dependencies {
 
 	compile 'com.google.code.gson:gson:2.6.2'
 	compile 'commons-codec:commons-codec:1.15'
-
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
