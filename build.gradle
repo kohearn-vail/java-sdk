@@ -23,7 +23,7 @@ dependencies {
 	testCompile 'junit:junit:4.12'
 
 	compile 'com.google.code.gson:gson:2.6.2'
-	implementation 'commons-codec:commons-codec:1.7'
+	implementation 'commons-codec:commons-codec:1.15'
 
 }
 
