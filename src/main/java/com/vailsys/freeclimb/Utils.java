@@ -25,7 +25,7 @@ public class Utils {
      *                            provided
      * @throws FreeClimbException upon failed verification
 	 */
-	public void verifyRequest(String requestBody, String signatureHeader, String signingSecret, int tolerance) throws FreeClimbException {
+	public static void verifyRequest(String requestBody, String signatureHeader, String signingSecret, int tolerance) throws FreeClimbException {
 		String[] values = signatureHeader.split(",");
 
         long time = 0;
