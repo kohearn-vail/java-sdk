@@ -9,7 +9,7 @@ group = 'com.github.FreeClimbAPI'
 
 sourceCompatibility = 1.7 // java 7
 targetCompatibility = 1.7
-version = '3.0.3'
+version = '4.0.0'
 
 repositories {
 	mavenCentral()
@@ -23,6 +23,7 @@ dependencies {
 	testCompile 'junit:junit:4.12'
 
 	compile 'com.google.code.gson:gson:2.6.2'
+	compile 'commons-codec:commons-codec:1.15'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
