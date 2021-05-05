@@ -14,19 +14,19 @@ import com.vailsys.freeclimb.api.FreeClimbException;
 import org.apache.commons.codec.binary.Hex;
 
 public class Utils {
-	/**
-	 * Verify a request's signature
-	 *
-	 * @param requestBody         The request's body
-	 * @param signatureHeader     The request's `freeclimb-signature` header
-     * @param signingSecret       A signing secret from the FreeClimb account
-     * @param tolerance           Acceptable duration threshold represented in 
+    /**
+     * Verify a request's signature
+     *
+     * @param requestBody        The request's body
+     * @param signatureHeader   The request's `freeclimb-signature` header
+     * @param signingSecret     A signing secret from the FreeClimb account
+     * @param tolerance            Acceptable duration threshold represented in 
      *                            milliseconds, defaulting to 5 minutes when not
      *                            provided
      * @throws FreeClimbException upon failed verification
-	 */
-	public static void verifyRequest(String requestBody, String signatureHeader, String signingSecret, int tolerance) throws FreeClimbException {
-		String[] values = signatureHeader.split(",");
+     */
+    public static void verifyRequest(String requestBody, String signatureHeader, String signingSecret, int tolerance) throws FreeClimbException {
+        String[] values = signatureHeader.split(",");
 
         long time = 0;
         List<String> v1 = new ArrayList<String>();
@@ -45,7 +45,7 @@ public class Utils {
                 if (key.equals("v1")) {
                     v1.add(value);
                 }
-            } catch (UnsupportedEncodingException e) {
+            } catch (Exception e) {
                 throw new FreeClimbException(e);
             }
         }
@@ -68,17 +68,17 @@ public class Utils {
         } catch (Exception e) {
             throw new FreeClimbException("Failed to calculate hmac using ", e);
         }
-	}
+    }
 
     /**
-	 * Verify a request's signature
-	 *
-	 * @param requestBody         The request's body
-	 * @param signatureHeader     The request's `freeclimb-signature` header
+     * Verify a request's signature
+     *
+     * @param requestBody         The request's body
+     * @param signatureHeader     The request's `freeclimb-signature` header
      * @param signingSecret       A signing secret from the FreeClimb account
      * @throws FreeClimbException upon failed verification
-	 */
+     */
     public static void verifyRequest(String requestBody, String signatureHeader, String signingSecret) throws FreeClimbException {
-		Utils.verifyRequest(requestBody, signatureHeader, signingSecret, 5*60*1000);
-	}
+        Utils.verifyRequest(requestBody, signatureHeader, signingSecret, 5*60*1000);
+    }
 }
