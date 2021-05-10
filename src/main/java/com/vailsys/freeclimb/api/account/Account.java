@@ -27,9 +27,9 @@ public class Account extends FreeClimbCommon {
      */
     private String accountId;
     /**
-     * The authToken for this account instance.
+     * The apiKey for this account instance.
      */
-    private String authToken;
+    private String apiKey;
     /**
      * The alias for this account.
      */
@@ -81,12 +81,12 @@ public class Account extends FreeClimbCommon {
     }
 
     /**
-     * Retrieve the authToken for this account from the object.
+     * Retrieve the apiKey for this account from the object.
      *
-     * @return The authToken for this account.
+     * @return The apiKey for this account.
      */
-    public String getAuthToken() {
-        return authToken;
+    public String getApiKey() {
+        return apiKey;
     }
 
     /**
@@ -150,10 +150,10 @@ public class Account extends FreeClimbCommon {
             result = result && that.getAccountId() == null;
         }
 
-        if (this.getAuthToken() != null) {
-            result = result && that.getAuthToken().equals(this.getAuthToken());
+        if (this.getApiKey() != null) {
+            result = result && that.getApiKey().equals(this.getApiKey());
         } else {
-            result = result && that.getAuthToken() == null;
+            result = result && that.getApiKey() == null;
         }
 
         if (this.getAlias() != null) {

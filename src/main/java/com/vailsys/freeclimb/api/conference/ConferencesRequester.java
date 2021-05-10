@@ -33,15 +33,15 @@ public class ConferencesRequester extends APIAccountRequester {
 	 * @param credAccountId   The accountId to use as authentication credentials in
 	 *                        the HTTP Basic Auth header for requests made by this
 	 *                        requester.
-	 * @param credAuthToken   The authToken to use as authentication credentials in
+	 * @param credApiKey   The apiKey to use as authentication credentials in
 	 *                        the HTTP Basic Auth header for requests made by this
 	 *                        requester.
 	 * @param actingAccountId The accountId to act as. This can be the same as
 	 *                        {@code credAccountId} or the accountId of a subaccount
 	 *                        of the {@code credAccountId}.
 	 */
-	public ConferencesRequester(String credAccountId, String credAuthToken, String actingAccountId) {
-		super(credAccountId, credAuthToken);
+	public ConferencesRequester(String credAccountId, String credApiKey, String actingAccountId) {
+		super(credAccountId, credApiKey);
 		this.actingAccountId = actingAccountId;
 		this.path = APIAccountRequester.constructPath(APIAccountRequester.rootPath, this.actingAccountId, pathHead);
 	}
@@ -92,7 +92,7 @@ public class ConferencesRequester extends APIAccountRequester {
 	 * @throws FreeClimbException when the request fails or the JSON is invalid.
 	 */
 	public ConferenceList get() throws FreeClimbException {
-		return new ConferenceList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+		return new ConferenceList(this.getCredentialAccountId(), this.getCredentialApiKey(),
 				this.GET(this.getPath()));
 	}
 
@@ -121,7 +121,7 @@ public class ConferencesRequester extends APIAccountRequester {
 			throw new FreeClimbJSONException(jse);
 		}
 
-		return new ConferenceList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+		return new ConferenceList(this.getCredentialAccountId(), this.getCredentialApiKey(),
 				this.GET(this.getPath(), filtersMap));
 	}
 
@@ -198,7 +198,7 @@ public class ConferencesRequester extends APIAccountRequester {
 	 * @return The {@code ParticipantsRequester} that was created.
 	 */
 	public ParticipantsRequester getParticipantsRequester(String conferenceId) {
-		return new ParticipantsRequester(super.getCredentialAccountId(), super.getCredentialAuthToken(),
+		return new ParticipantsRequester(super.getCredentialAccountId(), super.getCredentialApiKey(),
 				this.getActingAccountId(), this.getConferencePath(conferenceId));
 	}
 }

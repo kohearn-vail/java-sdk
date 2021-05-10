@@ -28,9 +28,9 @@ public class ConferencesRequesterTest {
         private static String aTestConferenceWithOptions = "{ \"uri\": \"/Accounts/ACee6bb387248a12e31349fa3cf71d703767ccbc2a/Conferences/CFf85f0cb5b546b737c9b807f037b008c8ab621b6e\", \"revision\":1, \"dateCreated\":\"Thu, 13 Oct 2016 18:19:39 GMT\", \"dateUpdated\":\"Thu, 13 Oct 2016 18:19:39 GMT\", \"conferenceId\":\"CFf85f0cb5b546b737c9b807f037b008c8ab621b6e\", \"accountId\":\"ACee6bb387248a12e31349fa3cf71d703767ccbc2a\", \"alias\":\"the number\", \"playBeep\":\"never\", \"record\":true, \"status\":\"empty\", \"waitUrl\":null, \"actionUrl\":null, \"statusCallbackUrl\":\"http://spv07vcs15.vail:10123/confstatuscallback\", \"subresourceUris\":{ \"participants\":\"/Accounts/ACee6bb387248a12e31349fa3cf71d703767ccbc2a/Conferences/CFf85f0cb5b546b737c9b807f037b008c8ab621b6e/Participants\", \"recordings\":\"/Accounts/ACee6bb387248a12e31349fa3cf71d703767ccbc2a/Conferences/CFf85f0cb5b546b737c9b807f037b008c8ab621b6e/Recordings\" } }";
 
         @Given("^a ConferencesRequester with the credentials (AC[0-9A-Fa-f]{40}) and ([0-9A-Fa-f]{40}) and using the accountId (AC[0-9A-Fa-f]{40})$")
-        public void buildConferencesRequester(String credAccountId, String credAuthToken, String actingAccountId)
+        public void buildConferencesRequester(String credAccountId, String credApiKey, String actingAccountId)
                         throws Throwable {
-                this.confR = new ConferencesRequester(credAccountId, credAuthToken, actingAccountId);
+                this.confR = new ConferencesRequester(credAccountId, credApiKey, actingAccountId);
                 this.confR.setFreeClimbUrl("http://127.0.0.1:" + Helper.getServerPort());
         }
 

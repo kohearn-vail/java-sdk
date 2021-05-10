@@ -24,8 +24,8 @@ public class AvailablePhoneNumberRequesterTest {
             + AvailablePhoneNumberRequesterTest.testNumber + "]}";
 
     @Given("^an AvailablePhoneNumberRequester with the credentials (.*) and (.*) and using the accountId (.*)$")
-    public void create(String accountId, String authToken, String actingAccountId) throws FreeClimbException {
-        requester = new AvailablePhoneNumberRequester(accountId, authToken, actingAccountId);
+    public void create(String accountId, String apiKey, String actingAccountId) throws FreeClimbException {
+        requester = new AvailablePhoneNumberRequester(accountId, apiKey, actingAccountId);
         this.requester.setFreeClimbUrl("http://127.0.0.1:" + Helper.getServerPort());
     }
 

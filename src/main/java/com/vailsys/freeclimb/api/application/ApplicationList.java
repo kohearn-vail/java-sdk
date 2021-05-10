@@ -15,12 +15,12 @@ public class ApplicationList extends FreeClimbList<Application> {
      * Creates a new ApplicationList.
      *
      * @param accountId the accountId to use in requests for subsequent pages.
-     * @param authToken the authToken to use in requests for subsequent pages.
+     * @param apiKey the apiKey to use in requests for subsequent pages.
      * @param rawPage   the raw JSON string representing a page of an application
      *                  list from the FreeClimb API
      * @throws FreeClimbException when the JSON is invalid.
      */
-    public ApplicationList(String accountId, String authToken, String rawPage) throws FreeClimbException {
-        super(accountId, authToken, rawPage, "applications", Application.class);
+    public ApplicationList(String accountId, String apiKey, String rawPage) throws FreeClimbException {
+        super(accountId, apiKey, rawPage, "applications", Application.class);
     }
 }

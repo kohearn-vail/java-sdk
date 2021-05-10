@@ -33,15 +33,15 @@ public class QueuesRequester extends APIAccountRequester {
      * @param credAccountId   The accountId to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
-     * @param credAuthToken   The authToken to use as authentication credentials in
+     * @param credApiKey   The apiKey to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
      * @param actingAccountId The accountId to act as. This can be the same as
      *                        {@code credAccountId} or the accountId of a subaccount
      *                        of the {@code credAccountId}.
      */
-    public QueuesRequester(String credAccountId, String credAuthToken, String actingAccountId) {
-        super(credAccountId, credAuthToken);
+    public QueuesRequester(String credAccountId, String credApiKey, String actingAccountId) {
+        super(credAccountId, credApiKey);
         this.actingAccountId = actingAccountId;
         this.path = APIAccountRequester.constructPath(APIAccountRequester.rootPath, this.actingAccountId, pathHead);
     }
@@ -92,7 +92,7 @@ public class QueuesRequester extends APIAccountRequester {
      *                            JSON.
      */
     public QueueList get() throws FreeClimbException {
-        return new QueueList(this.getCredentialAccountId(), this.getCredentialAuthToken(), this.GET(this.getPath()));
+        return new QueueList(this.getCredentialAccountId(), this.getCredentialApiKey(), this.GET(this.getPath()));
     }
 
     /**
@@ -119,7 +119,7 @@ public class QueuesRequester extends APIAccountRequester {
             throw new FreeClimbJSONException(jse);
         }
 
-        return new QueueList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+        return new QueueList(this.getCredentialAccountId(), this.getCredentialApiKey(),
                 this.GET(this.getPath(), filtersMap));
     }
 
@@ -193,7 +193,7 @@ public class QueuesRequester extends APIAccountRequester {
      * @return The {@code MembersRequester} that was created.
      */
     public MembersRequester getMembersRequester(String queueId) {
-        return new MembersRequester(super.getCredentialAccountId(), super.getCredentialAuthToken(),
+        return new MembersRequester(super.getCredentialAccountId(), super.getCredentialApiKey(),
                 this.getActingAccountId(), this.getQueuePath(queueId));
     }
 }

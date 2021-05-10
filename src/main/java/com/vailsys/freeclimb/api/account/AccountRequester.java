@@ -29,15 +29,15 @@ public class AccountRequester extends APIRequester {
      * @param credAccountId   The accountId to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
-     * @param credAuthToken   The authToken to use as authentication credentials in
+     * @param credApiKey   The apiKey to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
      * @param actingAccountId The accountId to as as. This can be the same as
      *                        {@code credAccountId} or the accountId of a subaccount
      *                        of the {@code credAccountId}.
      */
-    public AccountRequester(String credAccountId, String credAuthToken, String actingAccountId) {
-        super(credAccountId, credAuthToken);
+    public AccountRequester(String credAccountId, String credApiKey, String actingAccountId) {
+        super(credAccountId, credApiKey);
         this.actingAccountId = actingAccountId;
         this.path = APIRequester.constructAbsolutePath(pathHead);
     }

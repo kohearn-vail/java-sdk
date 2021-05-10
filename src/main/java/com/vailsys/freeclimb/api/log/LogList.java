@@ -17,12 +17,12 @@ public class LogList extends FreeClimbList<Log> {
      * Creates a new LogList.
      *
      * @param credAccountId the accountId to use in requests for subsequent pages.
-     * @param credAuthToken the authToken to use in requests for subsequent pages.
+     * @param credApiKey the apiKey to use in requests for subsequent pages.
      * @param rawPage       the raw JSON string representing a page of a log list
      *                      from the FreeClimb API.
      * @throws FreeClimbException when the JSON is invalid.
      */
-    public LogList(String credAccountId, String credAuthToken, String rawPage) throws FreeClimbException {
-        super(credAccountId, credAuthToken, rawPage, "logs", Log.class);
+    public LogList(String credAccountId, String credApiKey, String rawPage) throws FreeClimbException {
+        super(credAccountId, credApiKey, rawPage, "logs", Log.class);
     }
 }

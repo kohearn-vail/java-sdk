@@ -17,13 +17,13 @@ public class IncomingPhoneNumberList extends FreeClimbList<IncomingPhoneNumber> 
      * Creates a new IncomingPhoneNumberList.
      *
      * @param credAccountId the accountId to use in requests for subsequent pages.
-     * @param credAuthToken the authToken to use in requests for subsequent pages.
+     * @param credApiKey the apiKey to use in requests for subsequent pages.
      * @param rawPage       the raw JSON string representing a page of a conference
      *                      list from the FreeClimb API.
      * @throws FreeClimbException when the request fails or the JSON is invalid.
      */
-    public IncomingPhoneNumberList(String credAccountId, String credAuthToken, String rawPage)
+    public IncomingPhoneNumberList(String credAccountId, String credApiKey, String rawPage)
             throws FreeClimbException {
-        super(credAccountId, credAuthToken, rawPage, "incomingPhoneNumbers", IncomingPhoneNumber.class);
+        super(credAccountId, credApiKey, rawPage, "incomingPhoneNumbers", IncomingPhoneNumber.class);
     }
 }

@@ -32,7 +32,7 @@ public class ParticipantsRequester extends APIAccountRequester {
      * @param credAccountId   The accountId to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
-     * @param credAuthToken   The authToken to use as authentication credentials in
+     * @param credApiKey   The apiKey to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
      * @param actingAccountId The accountId to act as. This can be the same as the
@@ -41,9 +41,9 @@ public class ParticipantsRequester extends APIAccountRequester {
      * @param conferencePath  The path for the conference endpoint this
      *                        ParticipantsRequester is under.
      */
-    public ParticipantsRequester(String credAccountId, String credAuthToken, String actingAccountId,
+    public ParticipantsRequester(String credAccountId, String credApiKey, String actingAccountId,
             String conferencePath) {
-        super(credAccountId, credAuthToken);
+        super(credAccountId, credApiKey);
         this.actingAccountId = actingAccountId;
         this.path = APIAccountRequester.constructPath(conferencePath, pathHead);
     }
@@ -96,7 +96,7 @@ public class ParticipantsRequester extends APIAccountRequester {
      * @throws FreeClimbException when the request fails or the JSON is invalid.
      */
     public ParticipantList get() throws FreeClimbException {
-        return new ParticipantList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+        return new ParticipantList(this.getCredentialAccountId(), this.getCredentialApiKey(),
                 this.GET(this.getPath()));
     }
 
@@ -125,7 +125,7 @@ public class ParticipantsRequester extends APIAccountRequester {
             throw new FreeClimbJSONException(jse);
         }
 
-        return new ParticipantList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+        return new ParticipantList(this.getCredentialAccountId(), this.getCredentialApiKey(),
                 this.GET(this.getPath(), filtersMap));
     }
 

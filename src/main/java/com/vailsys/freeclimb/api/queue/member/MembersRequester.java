@@ -28,7 +28,7 @@ public class MembersRequester extends APIAccountRequester {
      * @param credAccountId   The accountId to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
-     * @param credAuthToken   The authToken to use as authentication credentials in
+     * @param credApiKey   The apiKey to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
      * @param actingAccountId The accountId to act as. This can be the same as the
@@ -37,8 +37,8 @@ public class MembersRequester extends APIAccountRequester {
      * @param queuePath       The path for the queue endpoint this MembersRequester
      *                        is under.
      */
-    public MembersRequester(String credAccountId, String credAuthToken, String actingAccountId, String queuePath) {
-        super(credAccountId, credAuthToken);
+    public MembersRequester(String credAccountId, String credApiKey, String actingAccountId, String queuePath) {
+        super(credAccountId, credApiKey);
         this.actingAccountId = actingAccountId;
         this.path = APIAccountRequester.constructPath(queuePath, pathHead);
     }
@@ -91,7 +91,7 @@ public class MembersRequester extends APIAccountRequester {
      *                            valid JSON.
      */
     public MemberList get() throws FreeClimbException {
-        return new MemberList(this.getCredentialAccountId(), this.getCredentialAuthToken(), this.GET(this.getPath()));
+        return new MemberList(this.getCredentialAccountId(), this.getCredentialApiKey(), this.GET(this.getPath()));
     }
 
     /**

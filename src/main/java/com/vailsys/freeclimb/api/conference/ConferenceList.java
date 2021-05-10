@@ -18,12 +18,12 @@ public class ConferenceList extends FreeClimbList<Conference> {
 	 * Creates a new ConferenceList.
 	 * 
 	 * @param accountId the accountId to use in requests for subsequent pages.
-	 * @param authToken the authToken to use in requests for subsequent pages.
+	 * @param apiKey the apiKey to use in requests for subsequent pages.
 	 * @param rawPage   the raw JSON string representing a page of a conference list
 	 *                  from the FreeClimb API.
 	 * @throws FreeClimbException when the JSON is invalid.
 	 */
-	public ConferenceList(String accountId, String authToken, String rawPage) throws FreeClimbException {
-		super(accountId, authToken, rawPage, "conferences", Conference.class);
+	public ConferenceList(String accountId, String apiKey, String rawPage) throws FreeClimbException {
+		super(accountId, apiKey, rawPage, "conferences", Conference.class);
 	}
 }

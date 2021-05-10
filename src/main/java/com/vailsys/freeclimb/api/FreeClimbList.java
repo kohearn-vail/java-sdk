@@ -44,7 +44,7 @@ public abstract class FreeClimbList<T> extends APIRequester {
 	 *
 	 * @param accountId The accountId to use for credentials with the FreeClimb API
 	 *                  when pulling new pages of the list.
-	 * @param authToken The authToken to use for credentials with the FreeClimb API
+	 * @param apiKey The apiKey to use for credentials with the FreeClimb API
 	 *                  when pulling new pages of the list.
 	 * @param rawPage   The JSON string representing the first page of the list.
 	 * @param listField The name of the array of resources within the raw JSON list.
@@ -53,9 +53,9 @@ public abstract class FreeClimbList<T> extends APIRequester {
 	 * @param theType   The Type of the FreeClimb Resource this list will contain.
 	 * @throws FreeClimbException when the page is not valid JSON.
 	 */
-	protected FreeClimbList(String accountId, String authToken, String rawPage, String listField, Class<T> theType)
+	protected FreeClimbList(String accountId, String apiKey, String rawPage, String listField, Class<T> theType)
 			throws FreeClimbException {
-		super(accountId, authToken);
+		super(accountId, apiKey);
 		this.list = new ArrayList<T>();
 		this.listField = listField;
 		this.theType = theType;

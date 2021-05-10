@@ -39,8 +39,8 @@ public class FreeClimbListTest {
 
 	private class TestsList extends FreeClimbList<Test> {
 
-		public TestsList(String accountId, String authToken, String rawPage) throws FreeClimbException {
-			super(accountId, authToken, rawPage, "tests", Test.class);
+		public TestsList(String accountId, String apiKey, String rawPage) throws FreeClimbException {
+			super(accountId, apiKey, rawPage, "tests", Test.class);
 		}
 
 		public Test get(int i) {

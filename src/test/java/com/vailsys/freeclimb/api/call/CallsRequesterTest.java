@@ -32,9 +32,9 @@ public class CallsRequesterTest {
 	public CallsRequester callsR;
 
 	@Given("^a CallsRequester with the credentials (AC[0-9A-Fa-f]{40}) and ([0-9A-Fa-f]{40}) and using the accountId (AC[0-9A-Fa-f]{40})$")
-	public void buildCallsRequester(String credAccountId, String credAuthToken, String actingAccountId)
+	public void buildCallsRequester(String credAccountId, String credApiKey, String actingAccountId)
 			throws Throwable {
-		this.callsR = new CallsRequester(credAccountId, credAuthToken, actingAccountId);
+		this.callsR = new CallsRequester(credAccountId, credApiKey, actingAccountId);
 		this.callsR.setFreeClimbUrl("http://127.0.0.1:" + Helper.getServerPort());
 	}
 

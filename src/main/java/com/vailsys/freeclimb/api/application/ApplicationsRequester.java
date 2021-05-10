@@ -32,15 +32,15 @@ public class ApplicationsRequester extends APIAccountRequester {
      * @param credAccountId   The accountId to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
-     * @param credAuthToken   The authToken to use as authentication credentials in
+     * @param credApiKey   The apiKey to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
      * @param actingAccountId The accountId to act as. This can be the same as
      *                        {@code credAccountId} or the accountId of a subaccount
      *                        of the {@code credAccountId}.
      */
-    public ApplicationsRequester(String credAccountId, String credAuthToken, String actingAccountId) {
-        super(credAccountId, credAuthToken);
+    public ApplicationsRequester(String credAccountId, String credApiKey, String actingAccountId) {
+        super(credAccountId, credApiKey);
         this.actingAccountId = actingAccountId;
         this.path = APIAccountRequester.constructPath(APIAccountRequester.rootPath, this.actingAccountId, pathHead);
     }
@@ -91,7 +91,7 @@ public class ApplicationsRequester extends APIAccountRequester {
      * @throws FreeClimbException when the request fails or the JSON is invalid.
      */
     public ApplicationList get() throws FreeClimbException {
-        return new ApplicationList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+        return new ApplicationList(this.getCredentialAccountId(), this.getCredentialApiKey(),
                 this.GET(this.getPath()));
     }
 
@@ -118,7 +118,7 @@ public class ApplicationsRequester extends APIAccountRequester {
             throw new FreeClimbJSONException(jse);
         }
 
-        return new ApplicationList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+        return new ApplicationList(this.getCredentialAccountId(), this.getCredentialApiKey(),
                 this.GET(this.getPath(), filtersMap));
     }
 

@@ -20,12 +20,12 @@ Test the SDK is working by sending yourself a text message.
 public class Example {
 
     public static final String accountId = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-    public static final String authToken = "your_auth_token";
+    public static final String apiKey = "your_api_key";
     public static final String To = "your_phone_number";
     public static final String From = "a_free_climb_phone_number_in_your_account";
 
     public static void main(String[] args) throws FreeClimbException {
-        FreeClimbClient client = new FreeClimbClient(accountId, authToken);
+        FreeClimbClient client = new FreeClimbClient(accountId, apiKey);
 
         client.messages.create(From, To, "Welcome to FreeClimb!");
     }

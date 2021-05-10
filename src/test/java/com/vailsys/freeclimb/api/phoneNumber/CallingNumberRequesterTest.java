@@ -26,8 +26,8 @@ public class CallingNumberRequesterTest {
                         + this.newCallingNumber + "]}";
 
         @Given("^a CallingNumberRequester with the credentials (.*) and (.*) and using the accountId (.*)$")
-        public void create(String accountId, String authToken, String actingId) throws Throwable {
-                requester = new CallingNumberRequester(accountId, authToken, actingId);
+        public void create(String accountId, String apiKey, String actingId) throws Throwable {
+                requester = new CallingNumberRequester(accountId, apiKey, actingId);
                 requester.setFreeClimbUrl("http://127.0.0.1:" + Helper.getServerPort());
         }
 

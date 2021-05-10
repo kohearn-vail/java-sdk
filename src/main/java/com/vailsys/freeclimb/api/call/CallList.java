@@ -20,12 +20,12 @@ public class CallList extends FreeClimbList<Call> {
 	 * Creates a new CallList.
 	 * 
 	 * @param accountId the accountId to use in requests for subsequent pages.
-	 * @param authToken the authToken to use in requests for subsequent pages.
+	 * @param apiKey the apiKey to use in requests for subsequent pages.
 	 * @param rawPage   the raw JSON string representing a page of a call list from
 	 *                  the FreeClimb API.
 	 * @throws FreeClimbException when the JSON is invalid.
 	 */
-	public CallList(String accountId, String authToken, String rawPage) throws FreeClimbException {
-		super(accountId, authToken, rawPage, "calls", Call.class);
+	public CallList(String accountId, String apiKey, String rawPage) throws FreeClimbException {
+		super(accountId, apiKey, rawPage, "calls", Call.class);
 	}
 }

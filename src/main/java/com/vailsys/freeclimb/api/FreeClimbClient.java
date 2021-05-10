@@ -19,7 +19,7 @@ import com.vailsys.freeclimb.api.call.CallsRequester;
  */
 public class FreeClimbClient {
 	private String credAccountId;
-	private String credAuthToken;
+	private String credApiKey;
 	private String accountId;
 
 	public AccountRequester accounts;
@@ -41,8 +41,8 @@ public class FreeClimbClient {
 	 *
 	 * @param credAccountId The Account ID to use in your credentials for the
 	 *                      FreeClimb API.
-	 * @param credAuthToken The Auth Token to use in your credentials for the
-	 *                      FreeClimb API. This should be the matching Auth Token to
+	 * @param credApiKey The API key to use in your credentials for the
+	 *                      FreeClimb API. This should be the matching API key to
 	 *                      the credAccountId parameter.
 	 * @param accountId     The Account ID of the account you want to act as. This
 	 *                      should either be the same Account ID ass credAccountId
@@ -52,22 +52,22 @@ public class FreeClimbClient {
 	 * @throws FreeClimbException when any of the requesters throws a
 	 *                            FreeClimbException.
 	 */
-	public FreeClimbClient(String credAccountId, String credAuthToken, String accountId) throws FreeClimbException {
+	public FreeClimbClient(String credAccountId, String credApiKey, String accountId) throws FreeClimbException {
 		this.credAccountId = credAccountId;
-		this.credAuthToken = credAuthToken;
+		this.credApiKey = credApiKey;
 		this.accountId = accountId;
 
-		this.accounts = new AccountRequester(credAccountId, credAuthToken, accountId);
-		this.recordings = new RecordingsRequester(credAccountId, credAuthToken, accountId);
-		this.calls = new CallsRequester(credAccountId, credAuthToken, accountId);
-		this.conferences = new ConferencesRequester(credAccountId, credAuthToken, accountId);
-		this.logs = new LogRequester(credAccountId, credAuthToken, accountId);
-		this.available = new AvailablePhoneNumberRequester(credAccountId, credAuthToken, accountId);
-		this.calling = new CallingNumberRequester(credAccountId, credAuthToken, accountId);
-		this.incoming = new IncomingPhoneNumberRequester(credAccountId, credAuthToken, accountId);
-		this.queues = new QueuesRequester(credAccountId, credAuthToken, accountId);
-		this.applications = new ApplicationsRequester(credAccountId, credAuthToken, accountId);
-		this.messages = new MessagesRequester(credAccountId, credAuthToken, accountId);
+		this.accounts = new AccountRequester(credAccountId, credApiKey, accountId);
+		this.recordings = new RecordingsRequester(credAccountId, credApiKey, accountId);
+		this.calls = new CallsRequester(credAccountId, credApiKey, accountId);
+		this.conferences = new ConferencesRequester(credAccountId, credApiKey, accountId);
+		this.logs = new LogRequester(credAccountId, credApiKey, accountId);
+		this.available = new AvailablePhoneNumberRequester(credAccountId, credApiKey, accountId);
+		this.calling = new CallingNumberRequester(credAccountId, credApiKey, accountId);
+		this.incoming = new IncomingPhoneNumberRequester(credAccountId, credApiKey, accountId);
+		this.queues = new QueuesRequester(credAccountId, credApiKey, accountId);
+		this.applications = new ApplicationsRequester(credAccountId, credApiKey, accountId);
+		this.messages = new MessagesRequester(credAccountId, credApiKey, accountId);
 	}
 
 	/**
@@ -75,19 +75,19 @@ public class FreeClimbClient {
 	 * with one set of credentials and acts as that account.
 	 *
 	 * This Constructor is a shortcut for calling
-	 * {@code FreeClimbClient(credAccountId, credAuthToken, credAccountId)}.
+	 * {@code FreeClimbClient(credAccountId, credApiKey, credAccountId)}.
 	 *
 	 * @param credAccountId The Account ID to use in your credentials for the
 	 *                      FreeClimb API.
-	 * @param credAuthToken The Auth Token to use in your credentials for the
-	 *                      FreeClimb API. This should be the matching Auth Token to
+	 * @param credApiKey The API key to use in your credentials for the
+	 *                      FreeClimb API. This should be the matching API key to
 	 *                      the credAccountId parameter.
 	 * @see #FreeClimbClient(String, String, String)
 	 * @throws FreeClimbException when any of the requesters throws a
 	 *                            FreeClimbException.
 	 */
-	public FreeClimbClient(String credAccountId, String credAuthToken) throws FreeClimbException {
-		this(credAccountId, credAuthToken, credAccountId);
+	public FreeClimbClient(String credAccountId, String credApiKey) throws FreeClimbException {
+		this(credAccountId, credApiKey, credAccountId);
 	}
 
 	/**
@@ -98,10 +98,10 @@ public class FreeClimbClient {
 	}
 
 	/**
-	 * @return the Auth Token being used to authenticate with the API
+	 * @return the API key being used to authenticate with the API
 	 */
-	public String getCredAuthToken() {
-		return credAuthToken;
+	public String getCredApiKey() {
+		return credApiKey;
 	}
 
 	/**

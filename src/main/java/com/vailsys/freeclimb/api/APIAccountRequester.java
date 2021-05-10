@@ -14,7 +14,7 @@ public class APIAccountRequester extends APIRequester {
     /** The rootPath is used by subclasses to build the path to their endpoints. */
     protected static final String rootPath = constructAbsolutePath(accountPathHead);
 
-    protected APIAccountRequester(String credAccountId, String credAuthToken) {
-        super(credAccountId, credAuthToken);
+    protected APIAccountRequester(String credAccountId, String credApiKey) {
+        super(credAccountId, credApiKey);
     }
 }

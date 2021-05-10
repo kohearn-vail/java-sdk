@@ -29,9 +29,9 @@ public class ParticipantsRequesterTest {
                         + ParticipantsRequesterTest.aTestParticipant + "]}";
 
         @Given("^a ParticipantsRequester with the credentials (AC[0-9A-Fa-f]{40}) and ([0-9A-Fa-f]{40}) and using the accountId (AC[0-9A-Fa-f]{40}) and using the conferencePath (.*)$")
-        public void buildParticipantsRequester(String credAccountId, String credAuthToken, String actingAccountId,
+        public void buildParticipantsRequester(String credAccountId, String credApiKey, String actingAccountId,
                         String conferencePath) throws Throwable {
-                this.partR = new ParticipantsRequester(credAccountId, credAuthToken, actingAccountId, conferencePath);
+                this.partR = new ParticipantsRequester(credAccountId, credApiKey, actingAccountId, conferencePath);
                 this.partR.setFreeClimbUrl("http://127.0.0.1:" + Helper.getServerPort());
         }
 

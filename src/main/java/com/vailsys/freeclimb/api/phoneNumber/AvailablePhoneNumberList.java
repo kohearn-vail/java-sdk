@@ -18,14 +18,14 @@ public class AvailablePhoneNumberList extends FreeClimbList<AvailablePhoneNumber
      * Creates a new AvailablePhoneNumberList.
      *
      * @param accountId the accountId to use in requests for subsequent pages.
-     * @param authToken the authToken to use in requests for subsequent pages.
+     * @param apiKey the apiKey to use in requests for subsequent pages.
      * @param rawPage   the raw JSON string representing a page of an available
      *                  phone number list from the FreeClimb API.
      * @throws FreeClimbException when the JSON is invalid.
      *
      */
-    public AvailablePhoneNumberList(String accountId, String authToken, String rawPage) throws FreeClimbException {
-        super(accountId, authToken, rawPage, "availablePhoneNumbers", AvailablePhoneNumber.class);
+    public AvailablePhoneNumberList(String accountId, String apiKey, String rawPage) throws FreeClimbException {
+        super(accountId, apiKey, rawPage, "availablePhoneNumbers", AvailablePhoneNumber.class);
     }
 
 }

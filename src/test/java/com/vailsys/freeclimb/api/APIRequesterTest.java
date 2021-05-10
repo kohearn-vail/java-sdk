@@ -21,30 +21,30 @@ public class APIRequesterTest {
 
 	private APIRequester req;
 
-	@Given("^an accountId of (AC[0-9A-Fa-f]{40}) and an authToken of ([0-9A-Fa-f]{40}) to make a default APIRequester$")
-	public void makeADefaultAPIRequester(String accountId, String authToken) throws Throwable {
-		this.req = new APIRequester(accountId, authToken);
+	@Given("^an accountId of (AC[0-9A-Fa-f]{40}) and an apiKey of ([0-9A-Fa-f]{40}) to make a default APIRequester$")
+	public void makeADefaultAPIRequester(String accountId, String apiKey) throws Throwable {
+		this.req = new APIRequester(accountId, apiKey);
 		assertThat(APIRequester.FREECLIMB_URL, is("https://www.freeclimb.com/apiserver"));
 	}
 
-	@Given("^an accountId of (AC[0-9A-Fa-f]{40}) and an authToken of ([0-9A-Fa-f]{40}) to make a test APIRequester$")
-	public void makeAnAPIRequester(String accountId, String authToken) throws Throwable {
-		this.req = new APIRequester(accountId, authToken);
+	@Given("^an accountId of (AC[0-9A-Fa-f]{40}) and an apiKey of ([0-9A-Fa-f]{40}) to make a test APIRequester$")
+	public void makeAnAPIRequester(String accountId, String apiKey) throws Throwable {
+		this.req = new APIRequester(accountId, apiKey);
 		this.req.setFreeClimbUrl("http://127.0.0.1:" + Helper.getServerPort());
 	}
 
-	@Then("^stored in the APIRequester should be the accountId (AC[0-9A-Fa-f]{40}) and the authToken ([0-9A-Fa-f]{40})$")
-	public void APIRequesterStoreCorrectValues(String accountId, String authToken) throws Throwable {
+	@Then("^stored in the APIRequester should be the accountId (AC[0-9A-Fa-f]{40}) and the apiKey ([0-9A-Fa-f]{40})$")
+	public void APIRequesterStoreCorrectValues(String accountId, String apiKey) throws Throwable {
 		assertThat(this.req.getFreeClimbUrl(), is(APIRequester.FREECLIMB_URL));
 		assertThat(this.req.getCredentialAccountId(), is(accountId));
-		assertThat(this.req.getCredentialAuthToken(), is(authToken));
+		assertThat(this.req.getCredentialApiKey(), is(apiKey));
 	}
 
-	@Then("^stored in the test APIRequester should be the accountId (AC[0-9A-Fa-f]{40}) and the authToken ([0-9A-Fa-f]{40})$")
-	public void testAPIRequesterStoreCorrectValues(String accountId, String authToken) throws Throwable {
+	@Then("^stored in the test APIRequester should be the accountId (AC[0-9A-Fa-f]{40}) and the apiKey ([0-9A-Fa-f]{40})$")
+	public void testAPIRequesterStoreCorrectValues(String accountId, String apiKey) throws Throwable {
 		assertThat(this.req.getFreeClimbUrl(), is("http://127.0.0.1:" + Helper.getServerPort()));
 		assertThat(this.req.getCredentialAccountId(), is(accountId));
-		assertThat(this.req.getCredentialAuthToken(), is(authToken));
+		assertThat(this.req.getCredentialApiKey(), is(apiKey));
 	}
 
 	@Then("^change the freeclimbUrl to (http://.*)$")

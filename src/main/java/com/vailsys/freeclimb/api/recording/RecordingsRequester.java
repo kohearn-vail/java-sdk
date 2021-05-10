@@ -42,15 +42,15 @@ public class RecordingsRequester extends APIAccountRequester {
 	 * @param credAccountId   The accountId to use as authentication credentials in
 	 *                        the HTTP Basic Auth header for requests made by this
 	 *                        requester.
-	 * @param credAuthToken   The authToken to use as authentication credentials in
+	 * @param credApiKey   The apiKey to use as authentication credentials in
 	 *                        the HTTP Basic Auth header for requests made by this
 	 *                        requester.
 	 * @param actingAccountId The accountId to act as. This can be the same as
 	 *                        {@code credAccountId} or the accountId of a subaccount
 	 *                        of the {@code credAccountId}.
 	 */
-	public RecordingsRequester(String credAccountId, String credAuthToken, String actingAccountId) {
-		super(credAccountId, credAuthToken);
+	public RecordingsRequester(String credAccountId, String credApiKey, String actingAccountId) {
+		super(credAccountId, credApiKey);
 		this.actingAccountId = actingAccountId;
 		this.path = APIAccountRequester.constructPath(APIAccountRequester.rootPath, this.actingAccountId, pathHead);
 	}
@@ -108,7 +108,7 @@ public class RecordingsRequester extends APIAccountRequester {
 	 *                            invalid.
 	 */
 	public RecordingList getMeta() throws FreeClimbException {
-		return new RecordingList(this.getCredentialAccountId(), this.getCredentialAuthToken(), this.GET(this.path));
+		return new RecordingList(this.getCredentialAccountId(), this.getCredentialApiKey(), this.GET(this.path));
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class RecordingsRequester extends APIAccountRequester {
 			throw new FreeClimbJSONException(jse);
 		}
 
-		return new RecordingList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+		return new RecordingList(this.getCredentialAccountId(), this.getCredentialApiKey(),
 				this.GET(this.path, filtersMap));
 	}
 

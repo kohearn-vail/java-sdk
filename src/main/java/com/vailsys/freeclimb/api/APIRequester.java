@@ -40,7 +40,7 @@ public class APIRequester {
 	}.getType();
 
 	private String credAccountId;
-	private String credAuthToken;
+	private String credApiKey;
 	private String encodedAuth;
 	private String freeclimbUrl;
 
@@ -48,12 +48,12 @@ public class APIRequester {
 	 * Create a new APIRequester.
 	 *
 	 * @param credAccountId The accountId to use to authenticate requests.
-	 * @param credAuthToken The authToken to use to authenticate requests.
+	 * @param credApiKey The apiKey to use to authenticate requests.
 	 */
-	protected APIRequester(String credAccountId, String credAuthToken) {
+	protected APIRequester(String credAccountId, String credApiKey) {
 		this.credAccountId = credAccountId;
-		this.credAuthToken = credAuthToken;
-		this.encodedAuth = printBase64Binary((credAccountId + ":" + credAuthToken).getBytes(StandardCharsets.UTF_8));
+		this.credApiKey = credApiKey;
+		this.encodedAuth = printBase64Binary((credAccountId + ":" + credApiKey).getBytes(StandardCharsets.UTF_8));
 		this.freeclimbUrl = APIRequester.FREECLIMB_URL;
 	}
 
@@ -62,9 +62,9 @@ public class APIRequester {
 		return this.credAccountId;
 	}
 
-	/** @return the authToken being used for authentication */
-	protected String getCredentialAuthToken() {
-		return this.credAuthToken;
+	/** @return the apiKey being used for authentication */
+	protected String getCredentialApiKey() {
+		return this.credApiKey;
 	}
 
 	/** @return the url being used for the FreeClimb API */

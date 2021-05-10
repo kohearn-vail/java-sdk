@@ -33,15 +33,15 @@ public class CallingNumberRequester extends APIAccountRequester {
      * @param credAccountId   The accountId to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
-     * @param credAuthToken   The authToken to use as authentication credentials in
+     * @param credApiKey   The apiKey to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
      * @param actingAccountId The accountId to act as. This can be the same as
      *                        {@code credAccountId} or the accountId of a subaccount
      *                        of the {@code credAccountId}.
      */
-    public CallingNumberRequester(String credAccountId, String credAuthToken, String actingAccountId) {
-        super(credAccountId, credAuthToken);
+    public CallingNumberRequester(String credAccountId, String credApiKey, String actingAccountId) {
+        super(credAccountId, credApiKey);
         this.actingAccountId = actingAccountId;
         this.path = APIAccountRequester.constructPath(APIAccountRequester.rootPath, this.actingAccountId,
                 this.pathHead);
@@ -155,7 +155,7 @@ public class CallingNumberRequester extends APIAccountRequester {
      * @throws FreeClimbException when the request fails or the JSON is invalid.
      */
     public CallingNumberList get() throws FreeClimbException {
-        return new CallingNumberList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+        return new CallingNumberList(this.getCredentialAccountId(), this.getCredentialApiKey(),
                 this.GET(this.getPath()));
     }
 
@@ -182,7 +182,7 @@ public class CallingNumberRequester extends APIAccountRequester {
         } catch (JsonSyntaxException jse) {
             throw new FreeClimbJSONException(jse);
         }
-        return new CallingNumberList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+        return new CallingNumberList(this.getCredentialAccountId(), this.getCredentialApiKey(),
                 this.GET(this.getPath(), filtersMap));
     }
 }

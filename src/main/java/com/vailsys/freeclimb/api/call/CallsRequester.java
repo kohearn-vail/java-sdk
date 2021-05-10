@@ -32,7 +32,7 @@ public class CallsRequester extends APIAccountRequester {
 	 * @param credAccountId   The accountId to use as authentication credentials in
 	 *                        the HTTP Basic Auth header for requests made by this
 	 *                        requester.
-	 * @param credAuthToken   The authToken to use as authentication credentials in
+	 * @param credApiKey   The apiKey to use as authentication credentials in
 	 *                        the HTTP Basic Auth header for requests made by this
 	 *                        requester.
 	 * @param actingAccountId The accountId to act as. This can be the same as the
@@ -40,9 +40,9 @@ public class CallsRequester extends APIAccountRequester {
 	 *                        of the {@code credAccountId}.
 	 * @throws FreeClimbException when the request fails or the JSON is invalid.
 	 */
-	public CallsRequester(String credAccountId, String credAuthToken, String actingAccountId)
+	public CallsRequester(String credAccountId, String credApiKey, String actingAccountId)
 			throws FreeClimbException {
-		super(credAccountId, credAuthToken);
+		super(credAccountId, credApiKey);
 		this.actingAccountId = actingAccountId;
 		this.path = APIAccountRequester.constructPath(APIAccountRequester.rootPath, this.actingAccountId, pathHead);
 	}
@@ -148,7 +148,7 @@ public class CallsRequester extends APIAccountRequester {
 	 * @throws FreeClimbException when the request fails or the JSON is invalid.
 	 */
 	public CallList get() throws FreeClimbException {
-		return new CallList(this.getCredentialAccountId(), this.getCredentialAuthToken(), this.GET(this.path));
+		return new CallList(this.getCredentialAccountId(), this.getCredentialApiKey(), this.GET(this.path));
 	}
 
 	/**
@@ -175,7 +175,7 @@ public class CallsRequester extends APIAccountRequester {
 			throw new FreeClimbJSONException(jse);
 		}
 
-		return new CallList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+		return new CallList(this.getCredentialAccountId(), this.getCredentialApiKey(),
 				this.GET(this.path, filtersMap));
 	}
 

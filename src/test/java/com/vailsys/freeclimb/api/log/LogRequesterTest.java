@@ -28,8 +28,8 @@ public class LogRequesterTest {
             + this.logJson + "]}";
 
     @Given("^a LogRequester with the credentials (.*) and (.*) and using the accountId (.*)$")
-    public void create(String accountId, String authToken, String actingId) throws Throwable {
-        requester = new LogRequester(accountId, authToken, actingId);
+    public void create(String accountId, String apiKey, String actingId) throws Throwable {
+        requester = new LogRequester(accountId, apiKey, actingId);
         requester.setFreeClimbUrl("http://127.0.0.1:" + Helper.getServerPort());
     }
 

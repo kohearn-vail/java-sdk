@@ -37,15 +37,15 @@ public class MessagesRequester extends APIAccountRequester {
      * @param credAccountId   The accountId to use as authentication credentials in
      *                        the HTTP basic Auth Header for requests made by this
      *                        requester.
-     * @param credAuthToken   The authToken to use as authentication credentials in
+     * @param credApiKey   The apiKey to use as authentication credentials in
      *                        the HTTP basic Auth Header for requests made by this
      *                        requester.
      * @param actingAccountId The accountId to act as. This can be the same as
      *                        {@code credAccountId} or the accountId of a subaccount
      *                        of the {@code credAccountId}.
      */
-    public MessagesRequester(String credAccountId, String credAuthToken, String actingAccountId) {
-        super(credAccountId, credAuthToken);
+    public MessagesRequester(String credAccountId, String credApiKey, String actingAccountId) {
+        super(credAccountId, credApiKey);
         this.actingAccountId = actingAccountId;
         this.path = APIAccountRequester.constructPath(APIAccountRequester.rootPath, this.actingAccountId, pathHead);
     }
@@ -106,7 +106,7 @@ public class MessagesRequester extends APIAccountRequester {
      * @throws FreeClimbException when the request fails or the JSON is invalid.
      */
     public MessageList get() throws FreeClimbException {
-        return new MessageList(this.getCredentialAccountId(), this.getCredentialAuthToken(), this.GET(this.getPath()));
+        return new MessageList(this.getCredentialAccountId(), this.getCredentialApiKey(), this.GET(this.getPath()));
     }
 
     /**
@@ -132,7 +132,7 @@ public class MessagesRequester extends APIAccountRequester {
             throw new FreeClimbJSONException(jse);
         }
 
-        return new MessageList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+        return new MessageList(this.getCredentialAccountId(), this.getCredentialApiKey(),
                 this.GET(this.getPath(), filtersMap));
     }
 

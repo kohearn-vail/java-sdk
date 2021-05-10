@@ -15,8 +15,8 @@ public class CallingNumberListTest {
     @Given("^a CallingNumberList object$")
     public void create() throws Throwable {
         String accountId = "AC1234567891234569347529861234926463781734";
-        String authToken = "34513124a341b44234c143e214f22c2341242d234123ee";
-        list = new CallingNumberList(accountId, authToken, listJson);
+        String apiKey = "34513124a341b44234c143e214f22c2341242d234123ee";
+        list = new CallingNumberList(accountId, apiKey, listJson);
     }
 
     @Then("^check that the CallingNumberList was built correctly$")

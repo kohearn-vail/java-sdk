@@ -37,9 +37,9 @@ public class RecordingsRequesterTest {
 	public RecordingsRequester recordingsR;
 
 	@Given("^a RecordingsRequester with the credentials (AC[0-9A-Fa-f]{40}) and ([0-9A-Fa-f]{40}) and using the accountId (AC[0-9A-Fa-f]{40})$")
-	public void buildRecordingsRequester(String credAccountId, String credAuthToken, String actingAccountId)
+	public void buildRecordingsRequester(String credAccountId, String credApiKey, String actingAccountId)
 			throws Throwable {
-		this.recordingsR = new RecordingsRequester(credAccountId, credAuthToken, actingAccountId);
+		this.recordingsR = new RecordingsRequester(credAccountId, credApiKey, actingAccountId);
 		this.recordingsR.setFreeClimbUrl("http://127.0.0.1:" + Helper.getServerPort());
 	}
 

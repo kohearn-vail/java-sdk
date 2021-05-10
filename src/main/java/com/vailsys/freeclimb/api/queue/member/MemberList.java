@@ -18,12 +18,12 @@ public class MemberList extends FreeClimbList<Member> {
      * Creates a new MemberList.
      *
      * @param accountId the accountId to use in requests for subsequent pages.
-     * @param authToken the authToken to use in requests for subsequent pages.
+     * @param apiKey the apiKey to use in requests for subsequent pages.
      * @param rawPage   the raw JSON string representing a page of a member list
      *                  from the FreeClimb API.
      * @throws FreeClimbException when the page is not valid JSON.
      */
-    public MemberList(String accountId, String authToken, String rawPage) throws FreeClimbException {
-        super(accountId, authToken, rawPage, "queueMembers", Member.class);
+    public MemberList(String accountId, String apiKey, String rawPage) throws FreeClimbException {
+        super(accountId, apiKey, rawPage, "queueMembers", Member.class);
     }
 }

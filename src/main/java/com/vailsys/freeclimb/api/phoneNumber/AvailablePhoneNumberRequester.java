@@ -32,7 +32,7 @@ public class AvailablePhoneNumberRequester extends APIRequester {
      * @param credAccountId   The accountId to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
-     * @param credAuthToken   The authToken to use as authentication credentials in
+     * @param credApiKey   The apiKey to use as authentication credentials in
      *                        the HTTP Basic Auth header for requests made by this
      *                        requester.
      * @param actingAccountId The accountId to act as. This can be the same as
@@ -40,9 +40,9 @@ public class AvailablePhoneNumberRequester extends APIRequester {
      *                        of the {@code credAccountId}.
      * @throws FreeClimbException when the request fails or the JSON is invalid.
      */
-    public AvailablePhoneNumberRequester(String credAccountId, String credAuthToken, String actingAccountId)
+    public AvailablePhoneNumberRequester(String credAccountId, String credApiKey, String actingAccountId)
             throws FreeClimbException {
-        super(credAccountId, credAuthToken);
+        super(credAccountId, credApiKey);
         this.actingAccountId = actingAccountId;
         this.path = APIRequester.constructAbsolutePath(pathHead);
     }
@@ -88,7 +88,7 @@ public class AvailablePhoneNumberRequester extends APIRequester {
      * @throws FreeClimbException when the request fails or the JSON is invalid.
      */
     public AvailablePhoneNumberList get() throws FreeClimbException {
-        return new AvailablePhoneNumberList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+        return new AvailablePhoneNumberList(this.getCredentialAccountId(), this.getCredentialApiKey(),
                 this.GET(this.getPath()));
     }
 
@@ -114,7 +114,7 @@ public class AvailablePhoneNumberRequester extends APIRequester {
             throw new FreeClimbJSONException(jse);
         }
 
-        return new AvailablePhoneNumberList(this.getCredentialAccountId(), this.getCredentialAuthToken(),
+        return new AvailablePhoneNumberList(this.getCredentialAccountId(), this.getCredentialApiKey(),
                 this.GET(this.getPath(), filtersMap));
     }
 }
