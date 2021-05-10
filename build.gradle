@@ -9,7 +9,7 @@ group = 'com.github.FreeClimbAPI'
 
 sourceCompatibility = 1.7 // java 7
 targetCompatibility = 1.7
-version = '4.0.1'
+version = '4.0.2'
 
 repositories {
 	mavenCentral()
